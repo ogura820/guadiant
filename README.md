@@ -21,12 +21,12 @@
   `yarn install`  
   `rails s`  
 
-## カタログ設計、テーブル定義書、ワイヤーフレームの共有リンク
- [カタログ設計](https://docs.google.com/spreadsheets/d/1H91Bz-mZM60--Tnp-9YRwAM2L4hyuuqdyd0sG46FNa8/edit?usp=sharing)  
- [テーブル定義書](https://docs.google.com/spreadsheets/d/1H91Bz-mZM60--Tnp-9YRwAM2L4hyuuqdyd0sG46FNa8/edit?usp=sharing)  
- [ワイヤーフレーム](https://cacoo.com/diagrams/8LEMFC6PxzdiIDpp/DC8E6)
+## チェックシート、カタログ設計、テーブル定義書、ワイヤーフレームの共有リンク
+  [チェックシート](https://docs.google.com/spreadsheets/d/1H91Bz-mZM60--Tnp-9YRwAM2L4hyuuqdyd0sG46FNa8/edit#gid=1704578196)
+  [カタログ設計](https://docs.google.com/spreadsheets/d/1H91Bz-mZM60--Tnp-9YRwAM2L4hyuuqdyd0sG46FNa8/edit?usp=sharing)  
+  [テーブル定義書](https://docs.google.com/spreadsheets/d/1H91Bz-mZM60--Tnp-9YRwAM2L4hyuuqdyd0sG46FNa8/edit?usp=sharing)  
+  [ワイヤーフレーム](https://cacoo.com/diagrams/8LEMFC6PxzdiIDpp/DC8E6)
 
 ##  ER図、、画面遷移図の画像
- ![ER図](./ER.png)  
- ![画面遷移図](./view.png)
-   
+  ![ER図](./ER.png)  
+  ![画面遷移図](./view.png)
