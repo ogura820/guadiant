@@ -8,6 +8,27 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdn.geolonia.com/community-geocoder.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        let latitudeInput = document.getElementById('tweet_latitude');
+        let longitudeInput = document.getElementById('tweet_longitude');
+        let addressInput = document.getElementById('address');
+        addressInput.addEventListener('input', function() {
+          let address = addressInput.value;
+          if (address) {
+            getLatLng(address, function(latlng) {
+              latitudeInput.value = latlng.lat;
+              longitudeInput.value = latlng.lng;
+            });
+          }
+        });
+      });
+    </script>
   </head>
 
   <body>

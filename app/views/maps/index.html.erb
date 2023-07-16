@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Maps</h1>
-
+<%= render 'form', map: @map %>
 <table>
   <thead>
     <tr>
@@ -25,7 +25,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Map', new_map_path %>
