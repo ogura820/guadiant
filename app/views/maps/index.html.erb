@@ -1,7 +1,50 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Maps</h1>
-<%= render 'form', map: @map %>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  新規作成
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">新規投稿</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <%= form_with(model: @map) do |form| %>
+
+        <div class="field">
+          <%= form.label :name %>
+          <%= form.text_field :name %>
+        </div>
+      
+        <div class="field">
+        <%= form.label :address %>
+        <%= form.text_field :address, id: "address", :placeholder=> "大字まで入力" %>
+        </div>
+      
+        <div class="field">
+          <%= form.label :latitude %>
+          <%= form.text_field :latitude, id: "map_latitude" %>
+        </div>
+      
+        <div class="field">
+          <%= form.label :longitude %>
+          <%= form.text_field :longitude, id: "map_longitude" %>
+        </div>      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+        <%= form.submit "投稿する", class: "btn btn-primary" %><% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <table>
   <thead>
     <tr>
