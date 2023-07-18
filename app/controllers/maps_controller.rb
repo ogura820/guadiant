@@ -1,26 +1,21 @@
 class MapsController < ApplicationController
   before_action :set_map, only: %i[ show edit update destroy ]
 
-  # GET /maps or /maps.json
   def index
     @maps = Map.all
     @map = Map.new
   end
 
-  # GET /maps/1 or /maps/1.json
   def show
   end
 
-  # GET /maps/new
   def new
     @map = Map.new
   end
 
-  # GET /maps/1/edit
   def edit
   end
 
-  # POST /maps or /maps.json
   def create
     @map = Map.new(map_params)
 
@@ -35,7 +30,6 @@ class MapsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /maps/1 or /maps/1.json
   def update
     respond_to do |format|
       if @map.update(map_params)

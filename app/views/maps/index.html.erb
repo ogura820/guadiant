@@ -1,5 +1,22 @@
 <p id="notice"><%= notice %></p>
 
+<script>
+document.addEventListener('turbolinks:load', function() {
+    let latitudeInput = document.getElementById('map_latitude');
+    let longitudeInput = document.getElementById('map_longitude');
+    let addressInput = document.getElementById('address');
+    addressInput.addEventListener('input', function() {
+      let address = addressInput.value;
+      if (address) {
+        getLatLng(address, function(latlng) {
+          latitudeInput.value = latlng.lat;
+          longitudeInput.value = latlng.lng;
+        });
+      }
+    });
+  });
+</script>
+
 <h1>Maps</h1>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -7,6 +24,7 @@
 </button>
 
 <!-- Modal -->
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -39,6 +57,7 @@
       </div>
       <% end %>
     </div>
+
   </div>
 </div>
 

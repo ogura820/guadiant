@@ -16,12 +16,10 @@
 </p>
 
 <div   class="geolonia"
-data-lat="<%= @latitude %>"
-data-lng="<%= @longitude %>"
+data-lat="<%= @map.latitude %>"
+data-lng="<%= @map.longitude %>"
 data-zoom="15"
 data-geojson="https://ogura820.github.io/map_api/default_point.json"></div>
 
-
 <%= link_to 'Edit', edit_map_path(@map) %> |
 <%= link_to 'Back', maps_path %>
-<script type="text/javascript" src="https://cdn.geolonia.com/v1/embed?geolonia-api-key=aa6b75e73c294c64b4a3d047e70856eb"></script>
