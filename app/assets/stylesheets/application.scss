@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap";
+
 .channel-menu {
   position: fixed;
   top: 0;
@@ -26,7 +26,7 @@
 .channel-menu_name {
   display: inline-block;
   padding: 0 0.5rem 0 1.5rem;
-  color: #555459;
+  color: #ffffff;
   font-size: 1.4rem;
   font-weight: 900;
   line-height: 53px;
@@ -56,8 +56,8 @@
   height: 100%;
   width: 220px;
   float: left;
-  color: #ab9ba9;
-  background-color: #4d394b;
+  color: #ffffff;
+  background-color: #de691b;
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 10;
@@ -81,7 +81,7 @@
   margin: 0 1rem 0.1rem;
   text-transform: uppercase;
   font-weight: 700;
-  color: #ab9ba9;
+  color: #ffffff;
   width: 165px;
   position: relative;
 }
@@ -90,7 +90,7 @@
   padding: 0;
   list-style-type: none;
   text-align: left;
-  color: #ab9ba9;
+  color: #ffffff;
 }
 
 .channel {
@@ -102,7 +102,7 @@
   color: #ffffff;
   padding-left: 1rem;
   a {
-    color: #ddd;
+    color: #ffffff;
     text-decoration: none;
     width: 100%;
     display: inline-block;
@@ -113,5 +113,7 @@
 }
 
 .channel.active {
-  background: #4c9689;
+  background: #c75e18;
 }
+
+@import "bootstrap";
