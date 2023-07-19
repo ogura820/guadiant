@@ -14,6 +14,15 @@
  *= require_self
  */
 
+
+
+ .header {
+  background-color: #ffffff;
+  height: 50px;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
 .channel-menu {
   position: fixed;
   top: 0;
@@ -54,7 +63,8 @@
 .listings {
   min-height: 100vh;
   height: 100%;
-  width: 220px;
+  // max-width: 200px;
+  width: 100%;
   float: left;
   color: #ffffff;
   background-color: #de691b;
@@ -115,5 +125,7 @@
 .channel.active {
   background: #c75e18;
 }
+
+
 
 @import "bootstrap";
