@@ -1,26 +1,60 @@
-<%= form_with(model: map) do |form| %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+<script>
+  document.addEventListener('turbolinks:load', function() {
+    let latitudeInput = document.getElementById('map_latitude');
+    let longitudeInput = document.getElementById('map_longitude');
+    let addressInput = document.getElementById('address');
+    addressInput.addEventListener('input', function() {
+      let address = addressInput.value;
+      if (address) {
+        getLatLng(address, function(latlng) {
+          latitudeInput.value = latlng.lat;
+          longitudeInput.value = latlng.lng;
+        });
+      }
+    });
+  });
+</script>
 
-  <div class="field">
-  <%= form.label :address %>
-  <%= form.text_field :address, id: "address", :placeholder=> "大字まで入力" %>
-  </div>
+<h1>Maps</h1>
 
-  <div class="field">
-    <%= form.label :latitude %>
-    <%= form.text_field :latitude, id: "map_latitude" %>
-  </div>
+<!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    新規作成
+  </button>
 
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.text_field :longitude, id: "map_longitude" %>
-  </div>
+<!-- Modal -->
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">新規投稿</h5>
+        </div>
+        <div class="modal-body">
+          <%= form_with(model: @map, remote: true) do |form| %>
+            <div class="field">
+              <%= form.label :name %>
+              <%= form.text_field :name %>
+            </div>
+            <div class="field">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="大字まで入力">
+            </div>
+            <div class="field">
+              <%= form.label :latitude %>
+              <%= form.text_field :latitude, id: "map_latitude" %>
+            </div>
+            <div class="field">
+              <%= form.label :longitude %>
+              <%= form.text_field :longitude, id: "map_longitude" %>
+            </div>      
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          <%= form.submit "投稿する", class: "btn btn-primary" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
