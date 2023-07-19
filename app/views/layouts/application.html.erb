@@ -14,8 +14,15 @@
   </head>
 
   <body>
-  <script src="https://cdn.geolonia.com/community-geocoder.js"></script>
-    <%= yield %>
+    <div class="row">
+      <div class="col-2"> 
+        <%= render'layouts/sidebar' %>
+      </div>
+    <div class="col-10">
+      <script src="https://cdn.geolonia.com/community-geocoder.js"></script>
+      <%= yield %>
+    </div>
     <script type="text/javascript" src="https://cdn.geolonia.com/v1/embed?geolonia-api-key=<%= ENV["MAP_API"] %>"></script>
-  </body>
+    </div>
+    </body>
 </html>
