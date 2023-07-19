@@ -54,7 +54,8 @@
 .listings {
   min-height: 100vh;
   height: 100%;
-  width: 220px;
+  max-width: 200px;
+  width: 100%;
   float: left;
   color: #ffffff;
   background-color: #de691b;
@@ -114,6 +115,10 @@
 
 .channel.active {
   background: #c75e18;
+}
+
+.col-10 {
+  padding-left: 200px;
 }
 
 @import "bootstrap";
