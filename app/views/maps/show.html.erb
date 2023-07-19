@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @map.name %>
+</p>
+<p>
+  <strong>Latitude:</strong>
+  <%= @map.latitude %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%= @map.longitude %>
+</p>
+
+<style>
+  .geolonia {
+    width: 100%;
+    height: 900px;
+  }
+</style>
+<div   class="geolonia"
+  data-lat="<%= @map.latitude %>"
+  data-lng="<%= @map.longitude %>"
+  data-zoom="15"
+  data-geojson="https://ogura820.github.io/map_api/default_point.json">
+</div>
+
+<%= link_to 'Back', maps_path %>
