@@ -12,6 +12,16 @@
       <th>ペット？</th>
     </tr>
   </thead>
-
+  <tbody>
+    <% @families.each do |family| %>
+      <tr>
+        <td><%= family.name %></td>
+        <td><%= family.diet %></td>
+        <td><%= link_to 'Show', family %></td>
+        <td><%= link_to 'Edit', edit_family_path(family) %></td>
+        <td><%= link_to 'Destroy', family, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
   </tbody>
 </table>
