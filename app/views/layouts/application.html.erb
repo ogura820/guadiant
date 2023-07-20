@@ -17,13 +17,19 @@
         <%= render'layouts/sidebar' %>
       </div>
     <div class="col-10">
-    <header class="header">
-    <p id="notice"><%= notice %></p>
-    </header>
+      <header class="header">
+      <p id="notice"><%= notice %></p>
+      </header>
       <script src="https://cdn.geolonia.com/community-geocoder.js"></script>
-      <%= yield %>
+      <div class="yield">
+        <%= yield %>
+      </div>  
     </div>
+    <footer class="footer">
+      <p>Copyright © 2023 OnO_Dpro All RIGHTS RESERVED.</p>
+    </footer>
     <script type="text/javascript" src="https://cdn.geolonia.com/v1/embed?geolonia-api-key=<%= ENV["MAP_API"] %>"></script>
     </div>
     </body>
+
 </html>
