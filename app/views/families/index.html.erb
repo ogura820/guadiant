@@ -6,20 +6,38 @@
   <thead>
     <tr>
       <th>名前</th>
-      <th>性別</th>
       <th>年齢</th>
-      <th>食欲</th>
-      <th>ペット？</th>
     </tr>
   </thead>
   <tbody>
     <% @families.each do |family| %>
       <tr>
         <td><%= family.name %></td>
-        <td><%= family.diet %></td>
-        <td><%= link_to 'Show', family %></td>
-        <td><%= link_to 'Edit', edit_family_path(family) %></td>
-        <td><%= link_to 'Destroy', family, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= family.age %>歳</td>
+        <td>
+          <%= image_tag 'baby_boy.png' if family.sex == "男性" && (0..6).include?(family.age) %>
+          <%= image_tag 'baby_girl.png' if family.sex == "女性" && (0..6).include?(family.age) %>
+          <%= image_tag '7-13_man.png' if family.sex == "男性" && (7..13).include?(family.age) %>
+          <%= image_tag '7-13_woman.png' if family.sex == "女性" && (7..13).include?(family.age) %>
+          <%= image_tag '14-18_man.png' if family.sex == "男性" && (14..18).include?(family.age) %>
+          <%= image_tag '14-18_woman.png' if family.sex == "女性" && (14..18).include?(family.age) %>
+          <%= image_tag '19-64_man.png' if family.sex == "男性" && (19..64).include?(family.age) %>
+          <%= image_tag '19-64_woman.png' if family.sex == "女性" && (19..64).include?(family.age) %>
+          <%= image_tag '64-man.png' if family.sex == "男性" && (65..130).include?(family.age) %>
+          <%= image_tag '64-woman.png' if family.sex == "女性" && (65..130).include?(family.age) %>
+          <%= image_tag 'lgbt.png' if family.sex == "その他" %>
+          <%= image_tag 'maruhi.png' if family.sex == "回答しない" %>
+          </td>
+        <td>
+          <%= link_to  edit_family_path(family), class: "btn btn-success" do %>
+            <i class="bi bi-pencil-fill" aria-hidden="true"></i>編集
+          <% end %>  
+        </td>
+        <td>
+            <%= link_to  family, method: :delete, data: { confirm: '本当に削除しますか?' }, class: "btn btn-danger" do %>
+              <i class="bi bi-x-lg" aria-hidden="true"></i>削除
+            <% end %>  
+        </td>
       </tr>
     <% end %>
   </tbody>
