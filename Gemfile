@@ -28,7 +28,7 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'bootstrap', '~> 4.4.1'
+gem 'bootstrap', '~> 5.3.0.alpha3'
 gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'devise'
