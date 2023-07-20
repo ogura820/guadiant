@@ -1,8 +1,9 @@
 class MapsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_map, only: %i[ show edit  destroy ]
 
   def index
-    @maps = Map.all
+    @maps = Map.all.where(user_id: current_user.id)
     @map = Map.new
   end
 
@@ -14,13 +15,14 @@ class MapsController < ApplicationController
   end
 
   def create
-    @map = Map.new(map_params)
+    @map = current_user.maps.build(map_params)
 
     respond_to do |format|
       if @map.save
         format.html { redirect_to maps_url, notice: "Map was successfully created." }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        @maps = Map.all 
+        format.html { render :index, status: :unprocessable_entity }
       end
     end
   end
