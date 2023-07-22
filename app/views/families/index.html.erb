@@ -1,8 +1,9 @@
-<h1>備蓄算出用メンバー</h1>
+<h2>備蓄算出用メンバー</h2>
+必要な水の量は
 
-<%= render 'form' %>
-
-<table>
+<h2>備蓄算出用メンバー</h2>
+<%= render 'form' %> 現在メンバーは<%= @families.count %>人です
+<table class="table table-striped">
   <thead>
     <tr>
       <th>名前</th>
@@ -14,20 +15,7 @@
       <tr>
         <td><%= family.name %></td>
         <td><%= family.age %>歳</td>
-        <td>
-          <%= image_tag 'baby_boy.png' if family.sex == "男性" && (0..6).include?(family.age) %>
-          <%= image_tag 'baby_girl.png' if family.sex == "女性" && (0..6).include?(family.age) %>
-          <%= image_tag '7-13_man.png' if family.sex == "男性" && (7..13).include?(family.age) %>
-          <%= image_tag '7-13_woman.png' if family.sex == "女性" && (7..13).include?(family.age) %>
-          <%= image_tag '14-18_man.png' if family.sex == "男性" && (14..18).include?(family.age) %>
-          <%= image_tag '14-18_woman.png' if family.sex == "女性" && (14..18).include?(family.age) %>
-          <%= image_tag '19-64_man.png' if family.sex == "男性" && (19..64).include?(family.age) %>
-          <%= image_tag '19-64_woman.png' if family.sex == "女性" && (19..64).include?(family.age) %>
-          <%= image_tag '64-man.png' if family.sex == "男性" && (65..130).include?(family.age) %>
-          <%= image_tag '64-woman.png' if family.sex == "女性" && (65..130).include?(family.age) %>
-          <%= image_tag 'lgbt.png' if family.sex == "その他" %>
-          <%= image_tag 'maruhi.png' if family.sex == "回答しない" %>
-          </td>
+        <td><%= image_tag family.icon_image, class: 'icon' %></td>
         <td>
           <%= link_to  edit_family_path(family), class: "btn btn-success" do %>
             <i class="bi bi-pencil-fill" aria-hidden="true"></i>編集
