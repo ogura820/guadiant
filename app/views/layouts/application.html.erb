@@ -21,16 +21,24 @@
       <div class="col-10">
         <header class="header">
           <div class="d-flex flex-row-reverse bd-highlight">
-            <div id="notice"><%= notice %></div>
             <% if user_signed_in? %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              <%= link_to  destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" do %>
+                <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+                ログアウト
+              <% end %>
             <% else %>
-              <%= link_to "新規登録", new_user_registration_path %>
-              <%= link_to "ログイン", new_user_session_path %>
+              <%= link_to  new_user_registration_path, class: "btn btn-outline-primary" do %>
+                <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
+                新規登録
+              <% end %>   
+              <%= link_to  new_user_session_path, class: "btn btn-outline-success" do %>
+                <i class="bi bi-box-arrow-in-left" aria-hidden="true"></i>
+                ログイン
+              <% end %>
             <% end %>
           </div>
         </header>
-        
+        <div id="notice"><%= notice %></div>
         <script src="https://cdn.geolonia.com/community-geocoder.js"></script>
         <div class="yield">
           <%= yield %>
