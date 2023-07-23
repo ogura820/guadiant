@@ -1,6 +1,6 @@
 class Family < ApplicationRecord
   enum sex: { 女性: 0, 男性: 1, その他:2, 回答しない: 3}
-  enum diet: { 少なめ: 0, 普通: 1, 多め:2}
+  enum diet: { しない: 0, 中食が多い: 1, する:2}
 
   belongs_to :user
 
@@ -20,6 +20,10 @@ class Family < ApplicationRecord
     else
       sex == "男性" ? '64-man.png' : '64-woman.png'
     end
+  end
+
+  def calculate_required_water
+      user.families.count * 2
   end
 
 end
