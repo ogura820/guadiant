@@ -5,6 +5,14 @@ class FamiliesController < ApplicationController
   def index
     @families = Family.all.where(user_id: current_user.id)
     @family = Family.new
+    @required_water = []
+    @required_rice = []
+
+    @families.each do |family|
+      @required_water << family.calculate_required_quantity(:water)
+      @required_rice << family.calculate_required_quantity(:rice)
+    end
+
   end
 
   def show

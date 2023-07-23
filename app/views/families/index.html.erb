@@ -1,6 +1,8 @@
 <h2>備蓄算出用メンバー</h2>
-必要な水の量は
-
+<% @families.each do |family| %>
+  必要な水の量は<%= family.calculate_required_quantity(:water) %>
+  必要な米の量は
+<% end %>
 <h2>備蓄算出用メンバー</h2>
 <%= render 'form' %> 現在メンバーは<%= @families.count %>人です
 <table class="table table-striped">
@@ -14,8 +16,7 @@
     <% @families.each do |family| %>
       <tr>
         <td><%= family.name %></td>
-        <td><%= family.age %>歳</td>
-        <td><%= image_tag family.icon_image, class: 'icon' %></td>
+        <td><%= image_tag family.icon_image, class: 'icon' %><%= family.age %>歳</td>
         <td>
           <%= link_to  edit_family_path(family), class: "btn btn-success" do %>
             <i class="bi bi-pencil-fill" aria-hidden="true"></i>編集
