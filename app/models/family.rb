@@ -26,4 +26,20 @@ class Family < ApplicationRecord
       user.families.count * 2
   end
 
+  def calculate_required_rice
+    age_coefficient = 1.0
+
+    case age
+    when 0..6
+      age_coefficient += 0.5
+    when 7..13
+      age_coefficient += 0.8
+    when 14..18
+      age_coefficient += 1.2
+    else
+      age_coefficient += 1.0
+    end
+    2 * age_coefficient
+  end
+
 end
