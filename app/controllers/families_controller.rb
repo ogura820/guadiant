@@ -5,6 +5,8 @@ class FamiliesController < ApplicationController
   def index
     @families = Family.all.where(user_id: current_user.id)
     @family = Family.new
+    @total_required_rice = @families.sum(&:calculate_required_rice)
+    #各家族の必要量を計算後、sum(合計)する
   end
 
   def show
