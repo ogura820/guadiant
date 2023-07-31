@@ -2,4 +2,7 @@
 
 <h4>必要物資量の確認</h4>
 
-<p>必要な生米の量は: <%= @total_required_rice %></p>
+<p>必要な生米の量は<%= @total_required_rice.to_i %>kg</p>
+<% @required_stock.each do |key, value| %>
+  <p>必要な、<%= key %>は<%= value %>です。</p>
+<% end %>
