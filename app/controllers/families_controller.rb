@@ -6,7 +6,14 @@ class FamiliesController < ApplicationController
     @families = Family.all.where(user_id: current_user.id)
     @family = Family.new
     @total_required_rice = @families.sum(&:calculate_required_rice)
-    #各家族の必要量を計算後、sum(合計)する
+    @required_stock = current_user.calculate_stocks
+    #Userモデルに備蓄算出ロジックあり
+
+    if params[:sent_mail]
+      StockMailer.stock_mail(@required_stock,@total_required_rice,current_user).deliver
+      redirect_to families_path, notice: 'メール送信しました'
+    end
+    
   end
 
   def show

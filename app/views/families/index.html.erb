@@ -1,14 +1,9 @@
 <h2>必要備蓄量目安</h2>
-  <p>必要な水の量は<%= @families.count * 24 %>ℓ</p>
-  <p>必要なカセットボンベの量は<%= @families.count * 6 %>個</p>
+<%= link_to "必要備蓄量をメールで受け取る", families_path(sent_mail: "true")%>
   <p>必要な生米の量は<%= @total_required_rice.to_i %>kg</p>
-  <p>必要なそうめんの量は<%= @families.count * 150 %>g</p>
-  <p>必要なパスタの量は<%= @families.count * 300 %>g</p>
-  <p>必要なパックごはんの量は<%= @families.count * 3 %>個</p>
-  <p>必要なカップ麺の量は<%= @families.count * 3 %>個</p>
-  <p>ご飯と食べるレトルト食品(カレー・牛丼等)の量は<%= @families.count * 9 %>個</p>
-  <p>パスタと食べるレトルト食品(ミートソース等)の量は<%= @families.count * 3 %>個</p>
-  <p>必要な缶詰の量は<%= @families.count * 9 %>個</p>
+  <% @required_stock.each do |key, value| %>
+    <p>必要な、<%= key %>は<%= value %>です。</p>
+  <% end %>
   その他、調味料インスタント味噌汁や即席スープ、野菜ジュースがあるとよい
   https://www.maff.go.jp/j/zyukyu/foodstock/attach/pdf/guidebook-3.pdf
 <h2>備蓄算出用メンバー</h2>

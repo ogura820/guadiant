@@ -16,8 +16,20 @@
     <% @stockpiles.each do |stockpile| %>
       <tr>
         <td><%= stockpile.name %></td>
-        <td><%= stockpile.expiry_on.strftime("%Y年%m月%d日") %></td>
-        <td><%= stockpile.notice_on.strftime("%Y年%m月%d日") %></td>
+        <td>
+          <% if stockpile.expiry_on == nil %>
+            <%= "指定なし" %>
+          <% else  %>
+            <%= stockpile.expiry_on.strftime("%Y年%m月%d日") %>
+          <% end  %>
+        </td>
+        <td>
+          <% if stockpile.notice_on == nil %>
+            <%= "指定なし" %>
+          <% else %>
+            <%= stockpile.notice_on.strftime("%Y年%m月%d日") %>
+          <% end %>
+        </td>
         <td> 
           <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal<%= stockpile.id %>">
           <i class="bi bi-pencil-fill" aria-hidden="true"></i> 編集
