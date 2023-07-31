@@ -1,0 +1,35 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  新規作成
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">新規投稿</h5>
+      </div>
+      <div class="modal-body">
+        <%= form_with(model: @family, remote: true) do |form| %>
+          <div class="field">
+            <%= form.label :名前 %>
+              <%= form.text_field :name %>
+          </div>
+          <%= form.label :性別 %>
+            <%= form.select :sex, [["男性", "男性"], ["女性", "女性"], ["その他", "その他"], ["回答しない", "回答しない"]], include_blank: "選択して下さい" %><BR>
+          <%= form.label :年齢 %>
+            <%= form.number_field :age, min: 0, max: 150 %><BR>
+            <%= form.label :食生活 %>
+            <%= form.select :diet, [["しない", "しない"], ["中食が多い", "中食が多い"], ["する", "する"]], include_blank: "普段、料理は" %><BR>
+            <%= form.label :登録する家族がペットだったらチェック %>
+            <%= form.check_box :pet ,{}, "true", "false" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+        <%= form.submit "投稿する", class: "btn btn-primary" %>
+      </div>
+        <% end %>
+    </div>
+  </div>
+</div>
