@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   
   resources :maps
   resources :families
-
+  resources :stockpiles
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

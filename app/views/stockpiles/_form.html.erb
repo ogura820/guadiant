@@ -1,0 +1,31 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  新規登録
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">新規投稿</h5>
+      </div>
+      <div class="modal-body">
+        <%= form_with(model: @stockpile, remote: true) do |form| %>
+          <div class="field">
+            <%= form.label :名前 %>
+              <%= form.text_field :name %>
+          </div>
+          <%= form.label :使用期限 %>
+          <%= form.date_field :expiry_on %><BR>
+          <%= form.label :通知日 %>
+            <%= form.date_field :notice_on %><BR>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+        <%= form.submit "投稿する", class: "btn btn-primary" %>
+      </div>
+        <% end %>
+    </div>
+  </div>
+</div>
