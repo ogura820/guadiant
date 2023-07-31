@@ -8,14 +8,6 @@ class StockpilesController < ApplicationController
     @stockpile = Stockpile.new
   end
 
-  def edit
-    @stockpile = Stockpile.find(params[:id])
-  end
-
-  def new
-    @stockpile = Stockpile.new
-  end
-
   def update
     @stockpile = Stockpile.find(params[:id])
     if @stockpile.update(stockpile_params)

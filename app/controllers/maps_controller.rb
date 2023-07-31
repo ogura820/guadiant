@@ -10,13 +10,8 @@ class MapsController < ApplicationController
   def show
   end
 
-  def new
-    @map = Map.new
-  end
-
   def create
     @map = current_user.maps.build(map_params)
-
     respond_to do |format|
       if @map.save
         format.html { redirect_to maps_url, notice: "Map was successfully created." }
