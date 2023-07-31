@@ -6,4 +6,5 @@ class User < ApplicationRecord
   
   has_many :maps
   has_many :families
+  has_many :stockpiles
 end

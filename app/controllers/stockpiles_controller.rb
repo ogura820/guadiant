@@ -1,0 +1,2 @@
+class StockpilesController < ApplicationController
+end
