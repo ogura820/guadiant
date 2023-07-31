@@ -1,0 +1,27 @@
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal<%= stockpile.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">編集</h5>
+        </div>
+        <div class="modal-body">
+          <%= form_with(model: stockpile, remote: true) do |form| %>
+            <div class="field">
+              <%= form.label :名前 %>
+              <%= form.text_field :name %>
+            </div>
+            <%= form.label :使用期限 %>
+            <%= form.date_field :expiry_on %><BR>
+            <%= form.label :通知日 %>
+            <%= form.date_field :notice_on %><BR>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          <%= form.submit "更新する", class: "btn btn-primary" %>
+        </div>
+          <% end %>
+      </div>
+    </div>
+  </div>

@@ -1,1 +1,35 @@
+<h2>備蓄管理</h2>
+
 <%= render 'form' %> 
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>物資名</th>
+      <th>消費期限</th>
+      <th>通知日</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stockpiles.each do |stockpile| %>
+      <tr>
+        <td><%= stockpile.name %></td>
+        <td><%= stockpile.expiry_on.strftime("%Y年%m月%d日") %></td>
+        <td><%= stockpile.notice_on.strftime("%Y年%m月%d日") %></td>
+        <td> 
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal<%= stockpile.id %>">
+          <i class="bi bi-pencil-fill" aria-hidden="true"></i> 編集
+          </button>
+          <%= render 'edit', stockpile: stockpile %>  
+        </td>
+        <td>
+          <%= link_to  stockpile, method: :delete, data: { confirm: '本当に削除しますか?' }, class: "btn btn-danger" do %>
+            <i class="bi bi-x-lg" aria-hidden="true"></i> 削除
+          <% end %>  
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
