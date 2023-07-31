@@ -4,6 +4,7 @@ class Family < ApplicationRecord
 
   belongs_to :user
 
+
   def icon_image
     if sex == "その他"
       'lgbt.png'
@@ -20,10 +21,6 @@ class Family < ApplicationRecord
     else
       sex == "男性" ? '64-man.png' : '64-woman.png'
     end
-  end
-
-  def calculate_required_water
-      user.families.count * 2
   end
 
   def calculate_required_rice
