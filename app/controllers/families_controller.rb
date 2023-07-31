@@ -7,6 +7,10 @@ class FamiliesController < ApplicationController
     @family = Family.new
     @total_required_rice = @families.sum(&:calculate_required_rice)
     #各家族の必要量を計算後、sum(合計)する
+    if params[:sent_mail]
+      StockMailer.stock_mail(current_user,@total_required_rice).deliver
+      redirect_to families_path, notice: 'メール送信しました'
+    end
   end
 
   def show
