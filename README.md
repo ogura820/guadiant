@@ -28,5 +28,8 @@
   [ワイヤーフレーム](https://cacoo.com/diagrams/8LEMFC6PxzdiIDpp/DC8E6)
 
 ##  ER図・画面遷移図の画像
+  7/16時点
   ![ER図](./ER.png)  
+  8/1時点
+  ![ER図](./ERver2.png)  
   ![画面遷移図](./view.png)
