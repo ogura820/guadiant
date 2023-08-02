@@ -33,3 +33,4 @@ gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'rexml'
+gem 'whenever', require: false
