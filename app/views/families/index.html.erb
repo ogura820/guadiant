@@ -41,9 +41,10 @@ https://www.maff.go.jp/j/zyukyu/foodstock/attach/pdf/guidebook-3.pdf
         <td><%= family.name %></td>
         <td><%= image_tag family.icon_image, class: 'icon' %><%= family.age %>歳</td>
         <td>
-          <%= link_to  edit_family_path(family), class: "btn btn-success" do %>
-            <i class="bi bi-pencil-fill" aria-hidden="true"></i>編集
-          <% end %>  
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal<%= family.id %>">
+          <i class="bi bi-pencil-fill" aria-hidden="true"></i> 編集
+          </button>
+          <%= render 'edit', family: family %>  
         </td>
         <td>
             <%= link_to  family, method: :delete, data: { confirm: '本当に削除しますか?' }, class: "btn btn-danger" do %>

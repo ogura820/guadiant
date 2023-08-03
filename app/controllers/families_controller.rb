@@ -17,6 +17,16 @@ class FamiliesController < ApplicationController
   end
 
   def show
+    @family = Family.find(params[:id])
+  end
+
+  def update
+    @family = Family.find(params[:id])
+    if @family.update(family_params)
+      redirect_to familys_path, notice: "タスクを編集しました！"
+    else
+      render :edit
+    end
   end
 
   def new
