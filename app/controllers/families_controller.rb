@@ -10,7 +10,7 @@ class FamiliesController < ApplicationController
     #Userモデルに備蓄算出ロジックあり
 
     if params[:sent_mail]
-      StockMailer.stock_mail(@required_stock,@total_required_rice,current_user).deliver
+      StockMailer.stock_mail(@required_stock,@coefficient,current_user).deliver
       redirect_to families_path, notice: 'メール送信しました'
     end
     
