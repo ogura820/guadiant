@@ -5,7 +5,7 @@ class FamiliesController < ApplicationController
   def index
     @families = Family.all.where(user_id: current_user.id)
     @family = Family.new
-    @total_required_rice = @families.sum(&:calculate_required_rice)
+    @coefficient = @families.sum(&:coefficient)
     @required_stock = current_user.calculate_stocks
     #Userモデルに備蓄算出ロジックあり
 
@@ -28,7 +28,7 @@ class FamiliesController < ApplicationController
 
     respond_to do |format|
       if @family.save
-        format.html { redirect_to families_url, notice: "family was successfully created." }
+        format.html { redirect_to families_url, notice: "算出用ユーザー作成に成功しました" }
       else
         @families = Family.all 
         format.html { render :index, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class FamiliesController < ApplicationController
   def destroy
     @family.destroy
     respond_to do |format|
-      format.html { redirect_to families_url, notice: "family was successfully destroyed." }
+      format.html { redirect_to families_url, notice: "算出用ユーザーの削除に成功しました" }
     end
   end
 
