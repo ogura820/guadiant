@@ -1,25 +1,30 @@
 <%= render 'form' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<BR>
 
-  <tbody>
-    <% @maps.each do |map| %>
-      <tr>
-        <td><%= map.name %></td>
-        <td><%= map.latitude %></td>
-        <td><%= map.longitude %></td>
-        <td><%= link_to 'Show', map %></td>
-        <td><%= link_to 'Edit', edit_map_path(map) %></td>
-        <td><%= link_to 'Destroy', map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @maps.each do |map| %>
+  <figure class="figure">
+  <style>
+  .geolonia {
+    width: 100vh;
+    height: 80vh;
+  }
+</style>
+<div   class="geolonia"
+  data-lat="<%= map.latitude %>"
+  data-lng="<%= map.longitude %>"
+  data-zoom="15"
+  data-geojson="https://ogura820.github.io/map_api/default_point.json">
+</div>
+
+  <figcaption class="figure-caption">
+    <td><%= map.name %>
+    <%= link_to map , class: "btn btn-secondary" do %>
+      <i class="bi bi-map" aria-hidden="true"></i> 拡大表示
+      <% end %>  
+    <%= link_to  map, method: :delete, data: { confirm: '本当に削除しますか?' }, class: "btn btn-danger" do %>
+      <i class="bi bi-x-lg" aria-hidden="true"></i> 削除
+    <% end %>  
+    </figcaption>
+    </figure>
+<% end %>

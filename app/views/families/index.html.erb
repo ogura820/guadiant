@@ -1,30 +1,17 @@
-<h2>必要備蓄量目安</h2>
-<%= link_to "必要備蓄量をメールで受け取る", families_path(sent_mail: "true")%>
-
-  <table class="table table-striped" >
-  <thead>
-    <tr>
-      <th>名前</th>
-      <th>必要量</th>
-      <th>一人当たり必要量</th>
-      <th>年齢を考慮した必要量</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <% @required_stock.each do |key, value| %>
-      <tr>
-        <td><%= image_tag value[:画像], class: 'icon' %><%= key %></td>
-        <td><%= value[:計算量] %><%= value[:単位] %></td>
-        <td><%= value[:一人分] %><%= value[:単位] %></td>
-        <td><%= (value[:一人分] * @coefficient).to_i %><%= value[:単位] %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-その他、調味料インスタント味噌汁や即席スープ、野菜ジュースがあるとよい
-https://www.maff.go.jp/j/zyukyu/foodstock/attach/pdf/guidebook-3.pdf
-
+<% if @families.present? %>
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        必要な備蓄品と量を確認する！
+      </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+      <%= render 'required_stock' %>
+      </div>
+    </div>
+  <% else %>
+  <%= render 'manual' %>
+<% end %>
 
 <h2>備蓄算出用メンバー</h2>
 <%= render 'form' %> 現在メンバーは<%= @families.count %>人です
