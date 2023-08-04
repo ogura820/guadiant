@@ -4,6 +4,9 @@ class Family < ApplicationRecord
 
   belongs_to :user
 
+  def self.increase_age
+    Family.where("age <= ?", 130).update_all("age = age + 1")
+  end  
 
   def icon_image
     if sex == "その他"
