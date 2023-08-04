@@ -19,7 +19,7 @@
           <%= form.label :性別 %>
             <%= form.select :sex, [["男性", "男性"], ["女性", "女性"], ["その他", "その他"], ["回答しない", "回答しない"]], include_blank: "選択して下さい" %><BR>
           <%= form.label :年齢 %>
-            <%= form.number_field :age, min: 0, max: 150 %><BR>
+            <%= form.number_field :age, min: 0, max: 150 %>(数え年)<BR>
             <%= form.label :食生活 %>
             <%= form.select :diet, [["しない", "しない"], ["中食が多い", "中食が多い"], ["する", "する"]], include_blank: "普段、料理は" %><BR>
             <%= form.label :登録する家族がペットだったらチェック %>

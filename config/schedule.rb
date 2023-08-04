@@ -16,3 +16,7 @@ set :environment, rails_env
 every 1.day, at: '3:30 am' do
   runner "Stockpile.notice_on_check"
 end
+
+every '0 0 1 1 *' do
+  runner 'Family.increace_age'
+end
