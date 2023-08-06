@@ -5,9 +5,6 @@ class FamiliesController < ApplicationController
   def index
     @families = current_user.families
     @family = Family.new
-    @coefficient = @families.sum(&:coefficient)
-    @required_stock = current_user.calculate_stocks
-    #Userモデルに備蓄算出ロジックあり
 
     if params[:sent_mail]
       StockMailer.stock_mail(@required_stock,@coefficient,current_user).deliver
