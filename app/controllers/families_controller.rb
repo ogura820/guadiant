@@ -47,7 +47,7 @@ class FamiliesController < ApplicationController
     end
 
     def family_params
-      params.require(:family).permit(:name, :sex, :age, :diet, :pet)
+      params.require(:family).permit(%i[name sex age diet pet])
     end
 
 end
