@@ -3,7 +3,7 @@ class MapsController < ApplicationController
   before_action :set_map, only: %i[ show edit  destroy ]
 
   def index
-    @maps = Map.all.where(user_id: current_user.id)
+    @maps = current_user.maps
     @map = Map.new
   end
 
