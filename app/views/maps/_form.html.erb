@@ -1,11 +1,11 @@
 
 <script>
   document.addEventListener('turbolinks:load', function() {
-    let latitudeInput = document.getElementById('map_latitude');
-    let longitudeInput = document.getElementById('map_longitude');
-    let addressInput = document.getElementById('address');
+    const latitudeInput = document.getElementById('map_latitude');
+    const longitudeInput = document.getElementById('map_longitude');
+    const addressInput = document.getElementById('address');
     addressInput.addEventListener('input', function() {
-      let address = addressInput.value;
+      const address = addressInput.value;
       if (address) {
         getLatLng(address, function(latlng) {
           latitudeInput.value = latlng.lat;
