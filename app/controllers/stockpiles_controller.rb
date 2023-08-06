@@ -23,8 +23,8 @@ class StockpilesController < ApplicationController
       if @stockpile.save
         format.html { redirect_to stockpiles_url, notice: "登録できました" }
       else
-        @stockpiles = Stockpile.all 
-        format.html { render :index, status: :unprocessable_entity }
+        @stockpiles = current_user.stockpiles
+        format.html { render :index, status: : "登録に失敗しました" }
       end
     end
   end
