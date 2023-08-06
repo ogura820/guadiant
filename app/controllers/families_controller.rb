@@ -3,7 +3,7 @@ class FamiliesController < ApplicationController
   before_action :set_family, only: %i[ show edit  destroy ]
 
   def index
-    @families = Family.all.where(user_id: current_user.id)
+    @families = current_user.families
     @family = Family.new
     @coefficient = @families.sum(&:coefficient)
     @required_stock = current_user.calculate_stocks
@@ -14,10 +14,6 @@ class FamiliesController < ApplicationController
       redirect_to families_path, notice: 'メール送信しました'
     end
     
-  end
-
-  def show
-    @family = Family.find(params[:id])
   end
 
   def update
