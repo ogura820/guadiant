@@ -1,15 +1,14 @@
 class StockpilesController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_stockpile, only: %i[ show edit  destroy ]
+  before_action :set_stockpile, only: %i[ show edit  destroy update]
 
   def index
-    @stockpiles = Stockpile.all.where(user_id: current_user.id)
+    @stockpiles = current_user.stockpiles
     @stockpile = Stockpile.new
   end
 
   def update
-    @stockpile = Stockpile.find(params[:id])
     if @stockpile.update(stockpile_params)
       redirect_to stockpiles_path, notice: "タスクを編集しました！"
     else
