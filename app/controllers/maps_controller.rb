@@ -1,6 +1,6 @@
 class MapsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_map, only: %i[ show edit  destroy ]
+  before_action :set_map, only: %i[show edit  destroy]
 
   def index
     @maps = current_user.maps

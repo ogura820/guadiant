@@ -1,6 +1,6 @@
 class Family < ApplicationRecord
-  enum sex: { 女性: 0, 男性: 1, その他:2, 回答しない: 3}
-  enum diet: { しない: 0, 中食が多い: 1, する:2}
+  enum sex: { 女性: 0, 男性: 1, その他:2, 回答しない: 3 }
+  enum diet: { しない: 0, 中食が多い: 1, する:2 }
 
   belongs_to :user
 

@@ -1,6 +1,6 @@
 class FamiliesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_family, only: %i[ show edit  destroy ]
+  before_action :set_family, only: %i[show edit  destroy]
 
   def index
     @families = current_user.families
