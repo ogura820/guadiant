@@ -30,9 +30,9 @@
 ##  ER図・画面遷移図の画像
   7/16時点
 
-  ![ER図](README/ER.png)  
+  ![ER図](app/assets/images/README/ER.png)  
   8/1時点
   
-  ![ER図](README/erver2.png)  
-  ![画面遷移図](README/view.png)
+  ![ER図](app/assets/images/README/erver2.png)  
+  ![画面遷移図](app/assets/images/README/view.png)
 
