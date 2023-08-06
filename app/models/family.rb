@@ -14,15 +14,15 @@ class Family < ApplicationRecord
     elsif sex == "回答しない"
       'maruhi.png'
     elsif (0..6).include?(age)
-      sex == "男性" ? 'baby_boy.png' : 'baby_girl.png'
+      sex == "男性" ? 'age/baby_boy.png' : 'age/baby_girl.png'
     elsif (7..13).include?(age)
-      sex == "男性" ? '7-13_man.png' : '7-13_woman.png'
+      sex == "男性" ? 'age/7-13_man.png' : 'age/7-13_woman.png'
     elsif (14..18).include?(age)
-      sex == "男性" ? '14-18_man.png' : '14-18_woman.png'
+      sex == "男性" ? 'age/14-18_man.png' : 'age/14-18_woman.png'
     elsif (19..64).include?(age)
-      sex == "男性" ? '19-64_man.png' : '19-64_woman.png'
+      sex == "男性" ? 'age/19-64_man.png' : 'age/19-64_woman.png'
     else
-      sex == "男性" ? '64-man.png' : '64-woman.png'
+      sex == "男性" ? 'age/64-man.png' : 'age/64-woman.png'
     end
   end
 
