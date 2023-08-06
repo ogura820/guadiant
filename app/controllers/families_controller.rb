@@ -7,7 +7,7 @@ class FamiliesController < ApplicationController
     @family = Family.new
 
     if params[:sent_mail]
-      StockMailer.stock_mail(@required_stock,@coefficient,current_user).deliver
+      StockMailer.stock_mail(current_user.calculate_stocks,@families.sum(&:coefficient),current_user).deliver
       redirect_to families_path, notice: 'メール送信しました'
     end
     
