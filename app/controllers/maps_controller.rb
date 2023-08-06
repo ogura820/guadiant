@@ -12,21 +12,17 @@ class MapsController < ApplicationController
 
   def create
     @map = current_user.maps.build(map_params)
-    respond_to do |format|
       if @map.save
-        format.html { redirect_to maps_url, notice: "Map was successfully created." }
+        redirect_to maps_url, notice: "避難場所を登録しました"
       else
         @maps = Map.all 
-        format.html { render :index, status: :unprocessable_entity }
+        render :index, status: :unprocessable_entity
       end
-    end
   end
 
   def destroy
-    @map.destroy
-    respond_to do |format|
-      format.html { redirect_to maps_url, notice: "Map was successfully destroyed." }
-    end
+    @map.destroy!
+      redirect_to maps_url, notice: "削除しました"
   end
 
   private

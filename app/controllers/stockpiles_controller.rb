@@ -18,22 +18,17 @@ class StockpilesController < ApplicationController
 
   def create
     @stockpile = current_user.stockpiles.build(stockpile_params)
-
-    respond_to do |format|
       if @stockpile.save
-        format.html { redirect_to stockpiles_url, notice: "登録できました" }
+        redirect_to stockpiles_url, notice: "登録できました"
       else
         @stockpiles = Stockpile.all 
-        format.html { render :index, status: :unprocessable_entity }
+        render :index, status: :unprocessable_entity
       end
-    end
   end
 
   def destroy
-    @stockpile.destroy
-    respond_to do |format|
-      format.html { redirect_to stockpiles_url, notice: "削除できました" }
-    end
+    @stockpile.destroy!
+      redirect_to stockpiles_url, notice: "削除できました"
   end
 
   private
