@@ -9,7 +9,6 @@ class Stockpile < ApplicationRecord
         stockpile.save
       end
     end
-    Rails.logger.info "Stockpile.notice_on_check executed at #{Time.now}"
   end
 
 end
