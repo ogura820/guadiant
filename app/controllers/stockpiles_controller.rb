@@ -37,6 +37,6 @@ class StockpilesController < ApplicationController
     end
 
     def stockpile_params
-      params.require(:stockpile).permit(:name, :expiry_on, :notice_on)
+      params.require(:stockpile).permit(%i[name expiry_on notice_on])
     end
 end

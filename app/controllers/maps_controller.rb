@@ -31,6 +31,6 @@ class MapsController < ApplicationController
     end
 
     def map_params
-      params.require(:map).permit(:name, :latitude, :longitude)
+      params.require(:map).permit(%i[name latitude longitude])
     end
 end
