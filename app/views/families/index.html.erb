@@ -4,6 +4,7 @@
         必要な備蓄品と量を確認する！
       </button>
     </p>
+    <%= link_to "メンバーを考慮した必要物資をChat-GPTに聞く β機能", families_path(generate_chat_gpt: "true")%>
     <div class="collapse" id="collapseExample">
       <div class="card card-body">
       <%= render 'required_stock' %>
@@ -12,7 +13,7 @@
   <% else %>
   <%= render 'manual' %>
 <% end %>
-
+<%= chat_gpt_text if params[:generate_chat_gpt] %>
 <h2>備蓄算出用メンバー</h2>
 <%= render 'form' %> 現在メンバーは<%= @families.size %>人です
 <table class="table table-striped" >
