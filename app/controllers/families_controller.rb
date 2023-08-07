@@ -49,5 +49,4 @@ class FamiliesController < ApplicationController
     def family_params
       params.require(:family).permit(%i[name sex age diet pet])
     end
-
 end

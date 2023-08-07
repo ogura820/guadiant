@@ -10,4 +10,9 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
   # letter_opener関連curriculums/1063
+
+
+  resources :chats
+  get 'search', to: 'chats#search'
+
 end
