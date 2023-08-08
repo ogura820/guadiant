@@ -13,31 +13,12 @@
 
   <body>
     <div class="row no-gutters">
-
       <div class="col-2"> 
         <%= render'layouts/sidebar' %>
       </div>
-
       <div class="col-10">
         <header class="header">
-          <div class="d-flex flex-row-reverse bd-highlight">
-            <% if user_signed_in? %>
-              <%= link_to  destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" do %>
-                <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
-                ログアウト
-              <% end %>
-            <% else %>
-            <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
-              <%= link_to  new_user_registration_path, class: "btn btn-outline-primary" do %>
-                <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
-                新規登録
-              <% end %>   
-              <%= link_to  new_user_session_path, class: "btn btn-outline-success" do %>
-                <i class="bi bi-box-arrow-in-left" aria-hidden="true"></i>
-                ログイン
-              <% end %>
-            <% end %>
-          </div>
+          <%= render'layouts/header' %>
         </header>
         <div id="notice"><%= notice %></div>
         <script src="https://cdn.geolonia.com/community-geocoder.js"></script>

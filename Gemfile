@@ -9,6 +9,17 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'bootstrap', '~> 5.3.0.alpha3'
+gem 'jquery-rails'
+gem 'dotenv-rails'
+gem 'devise'
+gem 'rails_admin', '~> 3.0'
+gem 'rexml'
+gem 'whenever', require: false
+gem "ruby-openai"
+
+
 group :development, :test do  
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -27,11 +38,3 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'bootstrap', '~> 5.3.0.alpha3'
-gem 'jquery-rails'
-gem 'dotenv-rails'
-gem 'devise'
-gem 'rexml'
-gem 'whenever', require: false
-gem "ruby-openai"
