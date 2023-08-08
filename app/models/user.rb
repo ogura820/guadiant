@@ -8,6 +8,18 @@ class User < ApplicationRecord
   has_many :families
   has_many :stockpiles
 
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
+  def self.admin_guest
+    find_or_create_by!(email: 'admin@example.com', admin: true) do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
   def calculate_stocks
     {
       生米: {
