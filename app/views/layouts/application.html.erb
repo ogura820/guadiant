@@ -27,6 +27,7 @@
                 ログアウト
               <% end %>
             <% else %>
+            <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
               <%= link_to  new_user_registration_path, class: "btn btn-outline-primary" do %>
                 <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
                 新規登録
