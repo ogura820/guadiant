@@ -64,6 +64,7 @@
   <tbody>
     <% @stockpiles.each do |stockpile| %>
       <% if stockpile.name.present? && stockpile.expiry_on.to_date > Time.now.to_date %> 
+
         <tr>
           <td><%= stockpile.name %></td>
           <td><%= stockpile_strftime_text(stockpile.expiry_on) %></td>
