@@ -24,7 +24,9 @@
   <% else %>
   <%= render 'manual' %>
 <% end %>
+<BR>
 <%= chat_gpt_text if params[:generate_chat_gpt] %>
+<BR><BR>
 <h2>備蓄算出用メンバー</h2>
 <%= render 'form' %> 現在メンバーは<%= @families.size %>人です
 <table class="table table-striped" >

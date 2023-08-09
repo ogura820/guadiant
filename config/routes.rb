@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
+  root  'dashboard#index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  root  'maps#index'
 
   devise_for :users
   devise_scope :user do

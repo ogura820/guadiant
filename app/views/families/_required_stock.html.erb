@@ -12,14 +12,15 @@
   </thead>
   <tbody>
   <tr>
-  <% current_user.calculate_stocks.each do |key, value| %>
-      <tr>
-        <td><%= image_tag value[:画像], class: 'icon' %><%= key %></td>
-        <td><%= value[:計算量] %><%= value[:単位] %></td>
-        <td><%= value[:一人分] %><%= value[:単位] %></td>
-        <td><%= (value[:一人分] * @families.sum(&:coefficient)).to_i %><%= value[:単位] %></td>
-      </tr>
-    <% end %>
+  <% @calculate_stocks.each do |key, value| %>
+    <tr>
+      <td><%= image_tag value[:画像], class: 'icon' %><%= key %></td>
+      <td><%= value[:計算量] %><%= value[:単位] %></td>
+      <td><%= value[:一人分] %><%= value[:単位] %></td>
+      <% total_calculation = value[:一人分] * @coefficient %>
+      <td><%= total_calculation.to_i %><%= value[:単位] %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
 その他、調味料インスタント味噌汁や即席スープ、野菜ジュースがあるとよい

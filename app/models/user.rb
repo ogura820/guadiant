@@ -127,17 +127,18 @@ private
   end
 
   def calculate_required_
+    family_count = families.count
     {
-      生米: families.count * basic_required_[:生米],
-      水: families.count * basic_required_[:水],
-      カセットボンベ: families.count * basic_required_[:カセットボンベ],
-      そうめん: families.count * basic_required_[:そうめん],
-      パスタ: families.count * basic_required_[:パスタ],
-      パックごはん: families.count * basic_required_[:パックごはん],
-      カップ麺: families.count * basic_required_[:カップ麺],
-      ご飯一緒に食べるレトルト食品: families.count * basic_required_[:ご飯一緒に食べるレトルト食品],
-      パスタと一緒に食べるレトルト食品: families.count * basic_required_[:パスタと一緒に食べるレトルト食品],
-      缶詰: families.count * basic_required_[:缶詰],
+      生米: family_count * basic_required_[:生米],
+      水: family_count * basic_required_[:水],
+      カセットボンベ: family_count * basic_required_[:カセットボンベ],
+      そうめん: family_count * basic_required_[:そうめん],
+      パスタ: family_count * basic_required_[:パスタ],
+      パックごはん: family_count * basic_required_[:パックごはん],
+      カップ麺: family_count * basic_required_[:カップ麺],
+      ご飯一緒に食べるレトルト食品: family_count * basic_required_[:ご飯一緒に食べるレトルト食品],
+      パスタと一緒に食べるレトルト食品: family_count * basic_required_[:パスタと一緒に食べるレトルト食品],
+      缶詰: family_count * basic_required_[:缶詰],
     }
   end 
 
