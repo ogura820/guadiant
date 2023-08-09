@@ -1,21 +1,31 @@
+<% if @map.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @map.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @map.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= render 'form' %>
-
 <BR>
-
 <% @maps.each do |map| %>
+  <% if map.latitude.present? && map.longitude.present?%> 
   <figure class="figure">
-  <style>
-  .geolonia {
-    width: 100vh;
-    height: 80vh;
-  }
-</style>
-<div   class="geolonia"
-  data-lat="<%= map.latitude %>"
-  data-lng="<%= map.longitude %>"
-  data-zoom="15"
-  data-geojson="https://ogura820.github.io/map_api/default_point.json">
-</div>
+    <style>
+      .geolonia {
+        width: 100vh;
+        height: 80vh;
+      }
+    </style>
+    <div   class="geolonia"
+      data-lat="<%= map.latitude %>"
+      data-lng="<%= map.longitude %>"
+      data-zoom="15"
+      data-geojson="https://ogura820.github.io/map_api/default_point.json">
+    </div>
 
   <figcaption class="figure-caption">
     <td><%= map.name %>
@@ -27,4 +37,5 @@
     <% end %>  
     </figcaption>
     </figure>
+  <% end %>
 <% end %>

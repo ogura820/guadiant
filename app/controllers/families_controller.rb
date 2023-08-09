@@ -2,6 +2,8 @@ class FamiliesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_family, only: %i[show edit  destroy]
 
+
+
   def index
     @families = current_user.families
     @family = Family.new
@@ -31,8 +33,8 @@ class FamiliesController < ApplicationController
       if @family.save
         redirect_to families_url, notice: "算出用ユーザー作成に成功しました"
       else
-        @families = Family.all 
-        render :index, status: :unprocessable_entity
+        @families = current_user.families
+        render :index
       end
   end
 
