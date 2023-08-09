@@ -1,9 +1,10 @@
 class StockpilesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_stockpile, only: %i[show edit  destroy update]
+  before_action :set_stockpile, only: %i[show edit destroy update]
 
   def index
-    @stockpiles = current_user.stockpiles
+    @q = current_user.stockpiles.ransack(params[:q])
+    @stockpiles = @q.result(distinct: true)
     @stockpile = Stockpile.new
   end
 
@@ -20,7 +21,8 @@ class StockpilesController < ApplicationController
       if @stockpile.save
         redirect_to stockpiles_url, notice: "登録できました"
       else
-        @stockpiles = current_user.stockpiles
+        @q = current_user.stockpiles.ransack(params[:q])
+        @stockpiles = @q.result(distinct: true)
         render :index
       end
   end
@@ -31,11 +33,12 @@ class StockpilesController < ApplicationController
   end
 
   private
-    def set_stockpile
-      @stockpile = Stockpile.find(params[:id])
-    end
+  def set_stockpile
+    @stockpile = Stockpile.find(params[:id])
+  end
 
-    def stockpile_params
-      params.require(:stockpile).permit(%i[name expiry_on notice_on])
-    end
+  def stockpile_params
+    params.require(:stockpile).permit(%i[name expiry_on notice_on])
+  end
+
 end
