@@ -1,6 +1,8 @@
 class Stockpile < ApplicationRecord
   belongs_to :user
 
+  validates :name, presence: true
+
   def self.notice_on_check
     Stockpile.all.each do |stockpile|
       if stockpile.notice_on && stockpile.notice_on.to_date < Time.now.to_date && stockpile.status = false

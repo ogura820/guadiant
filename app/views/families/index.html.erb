@@ -1,3 +1,14 @@
+<% if @family.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @family.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @family.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <% if @families.present? %>
     <p>
       <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -25,6 +36,7 @@
   </thead>
   <tbody>
     <% @families.each do |family| %>
+      <% if family.name.present? && family.sex.present? && family.age.present? %> 
       <tr>
         <td><%= family.name %></td>
         <td><%= image_tag family.icon_image, class: 'icon' %><%= family.age %>歳</td>
@@ -40,6 +52,7 @@
             <% end %>  
         </td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

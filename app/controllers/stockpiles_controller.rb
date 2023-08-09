@@ -20,8 +20,8 @@ class StockpilesController < ApplicationController
       if @stockpile.save
         redirect_to stockpiles_url, notice: "登録できました"
       else
-        @stockpiles = Stockpile.all 
-        render :index, status: :unprocessable_entity
+        @stockpiles = current_user.stockpiles
+        render :index
       end
   end
 
