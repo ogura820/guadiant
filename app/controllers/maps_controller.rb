@@ -15,8 +15,8 @@ class MapsController < ApplicationController
       if @map.save
         redirect_to maps_url, notice: "避難場所を登録しました"
       else
-        @maps = Map.all 
-        render :index, status: :unprocessable_entity
+        @maps = current_user.maps
+        render :index
       end
   end
 

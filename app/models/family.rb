@@ -4,6 +4,8 @@ class Family < ApplicationRecord
 
   belongs_to :user
 
+  validates :name, :sex, :age,  presence: true
+
   def self.increase_age
     Family.where("age <= ?", 130).update_all("age = age + 1")
   end  

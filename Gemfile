@@ -7,7 +7,6 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
-gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 5.3.0.alpha3'
@@ -18,6 +17,7 @@ gem 'rails_admin', '~> 3.0'
 gem 'rexml'
 gem 'whenever', require: false
 gem "ruby-openai"
+gem 'ransack'
 
 
 group :development, :test do  
