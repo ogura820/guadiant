@@ -11,7 +11,14 @@
 <% end %>
 
 <%= render 'form' %> 
-<BR><BR><BR>
+<BR><BR>
+<%= search_form_for @q, url: stockpiles_path do |f| %>
+  <%= f.label :name_cont, '物資名' %>
+  <%= f.search_field :name_cont %>
+  <%= f.submit '検索' %>
+<% end %>
+<BR>
+
 <h3>消費期限切れ物資一覧</h3>
 
 <table class="table table-striped">
