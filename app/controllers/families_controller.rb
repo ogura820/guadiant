@@ -2,11 +2,11 @@ class FamiliesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_family, only: %i[show edit  destroy]
 
-
-
   def index
-    @families = current_user.families
+    @families = current_user.families.preload(:user)
     @family = Family.new
+    @coefficient = @families.sum(&:coefficient)
+    @calculate_stocks = current_user.calculate_stocks
 
     if params[:sent_mail]
       StockMailer.stock_mail(current_user.calculate_stocks,@families.sum(&:coefficient),current_user).deliver

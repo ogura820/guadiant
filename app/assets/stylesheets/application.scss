@@ -41,7 +41,7 @@
 .channel-menu_name {
   display: inline-block;
   padding: 0 0.5rem 0 1.5rem;
-  color: #000000;
+  color: #ffffff;
   font-size: 1.4rem;
   font-weight: 900;
   line-height: 53px;
@@ -69,8 +69,8 @@
   // max-width: 200px;
   width: 100%;
   float: left;
-  color: #000000;
-  background-color: #fff306;
+  color: #ffffff;
+  background-color: #000d21;
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 10;
@@ -95,7 +95,7 @@
   margin: 0 1rem 0.1rem;
   text-transform: uppercase;
   font-weight: 700;
-  color: #000000;
+  color: #ffffff;
   width: 165px;
   position: relative;
 }
@@ -104,7 +104,7 @@
   padding: 0;
   list-style-type: none;
   text-align: left;
-  color: #000000;
+  color: #ffffff;
 }
 
 .channel {
@@ -113,21 +113,21 @@
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
   padding-right: 17px;
-  color: #000000;
+  color: #ffffff;
   padding-left: 1rem;
   a {
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
     width: 100%;
     display: inline-block;
   }
   a:hover {
-    color: #232323;
+    color: #bfbfbf;
   }
 }
 
 .channel.active {
-  background: #ff0c0c;
+  background: #ff8811;
 }
 
 .footer{
