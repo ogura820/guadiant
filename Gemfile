@@ -19,6 +19,9 @@ gem 'rexml'
 gem 'whenever', require: false
 gem "ruby-openai"
 gem 'ransack'
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
 
 
 group :development, :test do  
