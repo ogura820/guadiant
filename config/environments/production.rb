@@ -5,10 +5,8 @@ Rails.application.configure do
   config.eager_load = true
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  config.public_file_server.enabled = true
-  config.assets.css_compressor = :sass
-  config.assets.enabled = true
-  config.assets.compile = true
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.assets.compile = false
   config.active_storage.service = :local
   config.log_level = :info
   config.log_tags = [ :request_id ]
@@ -24,15 +22,15 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: '18.179.234.240' }
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-    user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD'],
-    domain: "heroku.com",
-    address: "smtp.sendgrid.net",
-    port: 587,
-    authentication: :plain,
-    enable_starttls_auto: true
-  }
-end
+#   config.action_mailer.default_url_options = { host: '18.179.234.240' }
+#   ActionMailer::Base.delivery_method = :smtp
+#   ActionMailer::Base.smtp_settings = {
+#     user_name: ENV['SENDGRID_USERNAME'],
+#     password: ENV['SENDGRID_PASSWORD'],
+#     domain: "heroku.com",
+#     address: "smtp.sendgrid.net",
+#     port: 587,
+#     authentication: :plain,
+#     enable_starttls_auto: true
+#   }
+# end
