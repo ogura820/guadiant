@@ -11,8 +11,6 @@ module Guardiant
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
     config.time_zone = 'Tokyo'
-    config.assets.configure do |env|
-      env.register_mime_type('image/svg+xml')
-    end
+
   end
 end
