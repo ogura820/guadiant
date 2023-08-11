@@ -23,7 +23,7 @@ gem 'net-smtp'
 gem 'net-imap'
 gem 'net-pop'
 gem 'unicorn' # アプリケーションサーバのunicorn
-
+gem 'sprockets', '>= 3.0.0'
 
 
 group :development, :test do  
