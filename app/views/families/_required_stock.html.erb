@@ -14,7 +14,7 @@
   <tr>
   <% @calculate_stocks.each do |key, value| %>
     <tr>
-      <td><%= image_tag value[:画像], class: 'icon' %><%= key %></td>
+    <td><img src="<%= value[:画像] %>" class="icon"><%= key %></td>
       <td><%= value[:計算量] %><%= value[:単位] %></td>
       <td><%= value[:一人分] %><%= value[:単位] %></td>
       <% total_calculation = value[:一人分] * @coefficient %>
