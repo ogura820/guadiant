@@ -2,11 +2,11 @@
 lock '3.16.0'
 
 # デプロイするアプリケーション名
-set :application, 'Guardiant'
+set :application, 'guardiant'
 
 # cloneするgitのレポジトリ
 # （xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
-set :repo_url, 'https://github.com/ogura820/guadiant'
+set :repo_url, 'https://github.com/ogura820/guardiant'
 
 # deployするブランチ。デフォルトでmainを使用している場合、masterをmainに変更してください。
 set :branch, ENV['BRANCH'] || 'master'
