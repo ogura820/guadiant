@@ -22,7 +22,6 @@ gem 'ransack'
 gem 'net-smtp'
 gem 'net-imap'
 gem 'net-pop'
-gem 'dotenv-rails' # 開発環境で環境変数を操作するのに必要
 gem 'unicorn' # アプリケーションサーバのunicorn
 
 
