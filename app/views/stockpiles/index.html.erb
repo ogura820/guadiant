@@ -1,4 +1,12 @@
-<img src="/assets/title/stocks_mangement.svg" alt="Stocks Management" ><BR><BR>
+<figure class="text-center">
+  <blockquote class="blockquote"> 
+    <%= image_tag "/assets/title/stocks_mangement.svg", class: 'display-1' %>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    <p>備蓄物資の消費期限・通知日を登録してメールで通知を受け取れます</p>
+  </figcaption>
+  </figure>
+<BR><BR>
 <% if @stockpile.errors.any? %>
   <div id="error_explanation">
     <h2><%= @stockpile.errors.count %>件のエラーがあります。</h2>

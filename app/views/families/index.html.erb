@@ -27,7 +27,17 @@
 <BR>
 <%= chat_gpt_text if params[:generate_chat_gpt] %>
 <BR><BR>
-<h2>備蓄算出用メンバー</h2>
+
+<figure class="text-center">
+  <blockquote class="blockquote"> 
+    <%= image_tag "/assets/title/stocks_mangement.svg", class: 'display-1' %>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    <p>必要備蓄量を計算するためのメンバーを登録しましょう</p>
+  </figcaption>
+  </figure>
+<BR><BR>
+
 <%= render 'form' %> 現在メンバーは<%= @families.size %>人です
 <table class="table table-striped" >
   <thead>
