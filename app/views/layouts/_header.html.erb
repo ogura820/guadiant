@@ -6,15 +6,25 @@
   <% end %>
   <%= link_to '管理者専用ページへ', rails_admin_path if current_user.admin?%>
 <% else %>
-<%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
-<%= link_to '管理者ゲストログイン（閲覧用）', users_admin_sign_in_path, method: :post %>
+<%= link_to users_guest_sign_in_path, method: :post, class: "btn btn-warning" do %>
+  <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
+  ゲストログイン（閲覧用
+<% end %>  
+
+<%= link_to  users_admin_sign_in_path, method: :post, class: "btn btn-danger" do %>
+  <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
+  管理者ゲストログイン（閲覧用）  
+<% end %>  
+
   <%= link_to  new_user_registration_path, class: "btn btn-outline-primary" do %>
     <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
-    新規登録
+    新規登録  
   <% end %>   
+
   <%= link_to  new_user_session_path, class: "btn btn-outline-success" do %>
     <i class="bi bi-box-arrow-in-left" aria-hidden="true"></i>
     ログイン
   <% end %>
 <% end %>
 </div>
+<div id="notice"><%= notice %></div>
