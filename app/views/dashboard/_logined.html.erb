@@ -1,0 +1,67 @@
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+<h1 class="display-4 fw-normal text-body-emphasis"><%= image_tag "guardiant.svg" %></h1>
+<p class="fs-5 text-body-secondary">ようこそGuardiantへ！！<BR>当アプリでは３つの機能が利用できます。<BR>サイドバーか下のリンクよりご利用ください。</p>
+</div>
+
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">避難場所検索機能</h4>
+          </div>
+          <div class="card-body">
+          <small class="text-body-secondary fw-light">現在登録されている地図</small><h1 class="card-title pricing-card-title"><%= @maps.count %></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>住所を入力して避難場所を把握しましょう！</li>
+              <li>この機能を利用するために必要な情報は以下の通りです</li>
+              <li>・住所</li><BR><BR>
+            </ul>
+            <%= link_to maps_path, class: "w-100 btn btn-lg btn-outline-primary" do %>
+              <i class="bi bi-binoculars-fill" aria-hidden="true"></i>
+              避難場所検索機能を利用
+            <% end %>   
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">必要備蓄量算出機能</h4>
+          </div>
+          <div class="card-body">
+          <small class="text-body-secondary fw-light">現在登録されているメンバー</small>
+          <h1 class="card-title pricing-card-title"><%= @families.count %></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>メンバーに応じた防災備蓄量を算出しましょう！</li>
+              <li>この機能を利用するために必要な情報は以下の通りです</li>
+              <li>・メンバーの人数</li>
+              <li>・メンバーの情報</li><BR>
+            </ul>
+            <%= link_to families_path, class: "w-100 btn btn-lg btn-outline-primary" do %>
+              <i class="bi bi-calculator-fill" aria-hidden="true"></i>
+              防災備蓄算出機能を利用
+            <% end %>   
+          </div>
+        </div>
+      </div>
+      <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">防災備蓄管理機能</h4>
+        </div>
+        <div class="card-body">
+        <small class="text-body-secondary fw-light">登録されている物資</small><h1 class="card-title pricing-card-title"><%= @maps.count %></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>物資と消費期限を登録してメールで通知を受け取りましょう！</li>
+            <li>この機能を利用するために必要な情報は以下の通りです</li>
+            <li>・物資の情報</li>
+            <li>・通知を受け取りたい日にち</li>
+          </ul>
+          <%= link_to maps_path, class: "w-100 btn btn-lg btn-outline-primary" do %>
+            <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+            防災備蓄管理機能を利用
+          <% end %>   
+        </div>
+      </div>
+    </div>
+    </div>
