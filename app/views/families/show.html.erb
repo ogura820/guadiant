@@ -7,8 +7,12 @@
   </figcaption>
   </figure>
 <BR><BR>
+<%= link_to "メンバーを考慮した必要物資をChat-GPTに聞く β機能", family_path(generate_chat_gpt: "true")%>
+<BR>
+<%= chat_gpt_text if params[:generate_chat_gpt] %>
+<BR><BR>
 
-<%= link_to "必要備蓄量をメールで受け取る", families_path(sent_mail: "true")%>
+<%= link_to "必要備蓄量をメールで受け取る", family_path(sent_mail: "true")%>
 
   <table class="table table-striped" >
   <thead>
@@ -33,4 +37,5 @@
   </tbody>
 </table>
 その他、調味料インスタント味噌汁や即席スープ、野菜ジュースがあるとよい
-https://www.maff.go.jp/j/zyukyu/foodstock/attach/pdf/guidebook-3.pdf
+https://www.maff.go.jp/j/zyukyu/foodstock/attach/pdf/guidebook-3.pdf<BR>
+<a href="families" class="btn btn-primary"  role="button" >戻る</a>

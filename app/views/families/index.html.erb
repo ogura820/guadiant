@@ -9,35 +9,16 @@
   </div>
 <% end %>
 
-<% if @families.present? %>
-    <p>
-      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        必要な備蓄品と量を確認する！
-      </button>
-    </p>
-    <%= link_to "メンバーを考慮した必要物資をChat-GPTに聞く β機能", families_path(generate_chat_gpt: "true")%>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body">
-      <%= render 'required_stock' %>
-      </div>
-    </div>
-  <% else %>
-  <%= render 'manual' %>
-<% end %>
-<BR>
-<%= chat_gpt_text if params[:generate_chat_gpt] %>
-<BR><BR>
-
 <figure class="text-center">
   <blockquote class="blockquote"> 
-    <%= image_tag "title/stocks_mangement.svg", class: 'display-1' %>
+    <%= image_tag "title/member.svg", class: 'display-1' %>
   </blockquote>
   <figcaption class="blockquote-footer">
     <p>必要備蓄量を計算するためのメンバーを登録しましょう</p>
   </figcaption>
   </figure>
-<BR><BR>
-
+<BR>  <%= render 'manual' unless @families.present? %> <BR>
+<a href="families/show" class="btn btn-primary"  role="button" >必要物資表示</a>
 <%= render 'form' %> 現在メンバーは<%= @families.size %>人です
 <table class="table table-striped" >
   <thead>

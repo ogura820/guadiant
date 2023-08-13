@@ -1,18 +1,20 @@
 class FamiliesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_family, only: %i[show edit  destroy]
+  before_action :set_family, only: %i[edit  destroy]
 
   def index
     @families = current_user.families.preload(:user)
     @family = Family.new
+  end
+
+  def show
+    @families = current_user.families.preload(:user)
     @coefficient = @families.sum(&:coefficient)
     @calculate_stocks = current_user.calculate_stocks
-
     if params[:sent_mail]
       StockMailer.stock_mail(current_user.calculate_stocks,@families.sum(&:coefficient),current_user).deliver
-      redirect_to families_path, notice: 'メール送信しました'
+      redirect_to family_path, notice: 'メール送信しました'
     end
-    
   end
 
   def update
