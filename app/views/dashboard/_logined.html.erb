@@ -14,9 +14,9 @@
             <ul class="list-unstyled mt-3 mb-4">
               <li>住所を入力して避難場所を把握しましょう！</li>
               <li>この機能を利用するために必要な情報は以下の通りです</li>
-              <li>・住所</li><BR><BR>
+              <li>・住所</li><BR>
             </ul>
-            <%= link_to maps_path, class: "w-100 btn btn-lg btn-outline-primary" do %>
+            <%= link_to maps_path, class: "w-100 btn btn-lg btn-outline-primary", data: {"turbolinks" => false}  do %>
               <i class="bi bi-binoculars-fill" aria-hidden="true"></i>
               避難場所検索機能を利用
             <% end %>   
@@ -35,9 +35,9 @@
               <li>メンバーに応じた防災備蓄量を算出しましょう！</li>
               <li>この機能を利用するために必要な情報は以下の通りです</li>
               <li>・メンバーの人数</li>
-              <li>・メンバーの情報</li><BR>
+              <li>・メンバーの情報</li>
             </ul>
-            <%= link_to families_path, class: "w-100 btn btn-lg btn-outline-primary" do %>
+            <%= link_to families_path, class: "w-100 btn btn-lg btn-outline-primary", data: {"turbolinks" => false} do %>
               <i class="bi bi-calculator-fill" aria-hidden="true"></i>
               防災備蓄算出機能を利用
             <% end %>   
@@ -57,7 +57,7 @@
             <li>・物資の情報</li>
             <li>・通知を受け取りたい日にち</li>
           </ul>
-          <%= link_to maps_path, class: "w-100 btn btn-lg btn-outline-primary" do %>
+          <%= link_to maps_path, class: "w-100 btn btn-lg btn-outline-primary", data: {"turbolinks" => false} do %>
             <i class="bi bi-envelope-fill" aria-hidden="true"></i>
             防災備蓄管理機能を利用
           <% end %>   

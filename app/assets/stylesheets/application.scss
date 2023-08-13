@@ -26,7 +26,8 @@
 }
 
 .logo{
-  width: 100%;
+  width: 90%;
+  margin: 2px; 
 }
 
 .channel-menu {
@@ -53,7 +54,6 @@
 .channel_name .prefix {
   margin-right: 8px;
 }
-
 
 .channel-menu_date {
   font-weight: bold;
@@ -145,7 +145,8 @@
 }
 
 .icon{
-  width: 80px;
+  width: auto;
+  max-width: 130px;
   height: 80px;
 }
 

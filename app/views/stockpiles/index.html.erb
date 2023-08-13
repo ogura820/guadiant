@@ -6,7 +6,8 @@
     <p>備蓄物資の消費期限・通知日を登録してメールで通知を受け取れます</p>
   </figcaption>
   </figure>
-<BR><BR>
+<BR>
+
 <% if @stockpile.errors.any? %>
   <div id="error_explanation">
     <h2><%= @stockpile.errors.count %>件のエラーがあります。</h2>
@@ -17,6 +18,8 @@
     </ul>
   </div>
 <% end %>
+
+<%= render 'manual' unless @stockpiles.present? %> <BR>
 
 <%= render 'form' %> 
 <BR><BR>

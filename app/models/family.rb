@@ -11,7 +11,9 @@ class Family < ApplicationRecord
   end  
 
   def icon_image
-    if sex == "その他"
+    if pet
+      'age/animal.png'
+    elsif sex == "その他"
       'lgbt.png'
     elsif sex == "回答しない"
       'maruhi.png'
