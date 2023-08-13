@@ -22,7 +22,7 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: '35.72.127.63' }
+  config.action_mailer.default_url_options = { host: 'guardiant.tokyo' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     user_name: ENV['SENDGRID_USERNAME'],
