@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    models:
+      family: メンバー
+      user: ユーザー
+      map: 地図
+      stockpile: 備蓄
+    attributes:
+      family:
+        name: 名前
+        sex: 性別
+        age: 年齢
+        diet: 食生活
+        pet: ペット
+      map:
+        name: 名前
+        latitude: 緯度
+        longitude: 経度
+      stockpile:
+        name: 物資名
+        expiry_on: 使用期限
+        notice_on: 通知日
+      user:
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
