@@ -1,13 +1,15 @@
 <div class="listings">
   <div class="listings_channels">
-    <img src="/assets/text557.svg" class="logo">
+    <%= image_tag "text557.svg", class: 'logo' %>
     <BR><BR><BR><BR><BR><BR>
-    <h2 class="listings_header">menu</h2><BR><BR>
-    <ul class="channel_list">
-      <%= sidebar_link_item('アカウント情報編集', edit_user_registration_path) %>
-      <%= sidebar_link_item('避難場所一覧', maps_path) %>
-      <%= sidebar_link_item('家族一覧', families_path) %>
-      <%= sidebar_link_item('備蓄品管理', stockpiles_path) %>
-    </ul>
+    <% if user_signed_in? %>
+      <h2 class="listings_header">menu</h2><BR><BR>
+      <ul class="channel_list">
+        <%= sidebar_link_item('アカウント情報編集', edit_user_registration_path) %>
+        <%= sidebar_link_item('避難場所一覧', maps_path) %>
+        <%= sidebar_link_item('家族一覧', families_path) %>
+        <%= sidebar_link_item('備蓄品管理', stockpiles_path) %>
+      </ul>
+    <% end %>  
   </div>
 </div>

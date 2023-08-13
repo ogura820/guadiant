@@ -1,27 +1,28 @@
-ようこそGuardianへ
-Guardianでは災害発生時の避難先の表示。各家庭に必要な防災備蓄量の把握と管理を簡単に行うことができます。<div id="carouselExampleIndicators" class="carousel slide">
-<div class="carousel-indicators">
-  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-</div>
-<div class="carousel-inner">
-  <div class="carousel-item active">
-  <%= image_tag "title/require_stocks.svg", class: 'display-1' %>
+
+<section class="py-5 text-center container">
+<div class="row py-lg-5">
+  <div class="col-lg-6 col-md-8 mx-auto">
+    <h1 class="fw-light">Guardian</h1>
+    <p class="lead text-body-secondary">「Guardiant」は防災対策について管理・出力する総合防災アプリです。</p>
+    <p class="lead text-body-secondary">ユーザー登録をすることで以下の機能が利用できます。</p>
+    <p class="lead text-body-secondary">
+      <ul>
+        <li>住所を入力して周辺の自治体が公表している災害避難場所を表示</li>
+        <li>同居人を入力して二週間生きるのに必要な防災備蓄食料の量を算出。</li>
+        <li>防災備蓄品を登録。消費期限を入力して、ユーザーの指定した日にメール通知</li>
+      </ul>
+    </p>
+
+    <p>
+      <%= link_to  new_user_registration_path, class: "btn btn-primary my-2" do %>
+        <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
+        新規登録
+      <% end %>   
+      <%= link_to  new_user_session_path, class: "btn btn-secondary my-2" do %>
+        <i class="bi bi-box-arrow-in-left" aria-hidden="true"></i>
+        ログイン
+      <% end %>
+    </p>
   </div>
-  <div class="carousel-item">
-    <img src="..." class="d-block w-100" alt="...">
-  </div>
-  <div class="carousel-item">
-    <img src="..." class="d-block w-100" alt="...">
-  </div>
 </div>
-<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  <span class="visually-hidden">Previous</span>
-</button>
-<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  <span class="visually-hidden">Next</span>
-</button>
-</div>
+</section>

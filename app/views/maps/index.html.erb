@@ -9,6 +9,15 @@
   </div>
 <% end %>
 
+<figure class="text-center">
+  <blockquote class="blockquote"> 
+    <%= image_tag "title/maps.svg", class: 'display-1' %>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    <p>住所を入力すると周辺の避難場所が表示されます</p>
+  </figcaption>
+  </figure><BR><BR>
+
 <%= render 'form' %>
 <BR>
 <% @maps.each do |map| %>
