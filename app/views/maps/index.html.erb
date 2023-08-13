@@ -17,7 +17,8 @@
     <p>住所を入力すると周辺の避難場所が表示されます</p>
   </figcaption>
   </figure><BR><BR>
-
+<%= render 'before_manual' unless @maps.present? %>
+<%= render 'manual' if @maps.present? %>
 <%= render 'form' %>
 <BR>
 <% @maps.each do |map| %>
