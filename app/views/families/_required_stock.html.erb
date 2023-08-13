@@ -1,4 +1,13 @@
-<h2>必要備蓄量目安</h2>
+<figure class="text-center">
+  <blockquote class="blockquote"> 
+    <%= image_tag "/assets/title/require_stocks.svg", class: 'display-1' %>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    <p>二週間分の必要備蓄量です</p>
+  </figcaption>
+  </figure>
+<BR><BR>
+
 <%= link_to "必要備蓄量をメールで受け取る", families_path(sent_mail: "true")%>
 
   <table class="table table-striped" >
@@ -14,7 +23,7 @@
   <tr>
   <% @calculate_stocks.each do |key, value| %>
     <tr>
-    <td><img src="<%= value[:画像] %>" class="icon"><%= key %></td>
+    <td><%= image_tag  value[:画像] , class: 'icon' %><%= key %></td>
       <td><%= value[:計算量] %><%= value[:単位] %></td>
       <td><%= value[:一人分] %><%= value[:単位] %></td>
       <% total_calculation = value[:一人分] * @coefficient %>
