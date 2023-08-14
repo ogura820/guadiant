@@ -14,7 +14,7 @@
         <%= form_with(model: @stockpile, remote: true) do |form| %>
           <div class="field">
             <%= form.label :名前 %>
-              <%= form.text_field :name %>
+              <%= form.text_field :name, placeholder:'電池・お酒など' %>
           </div>
           <%= form.label :使用期限 %>
           <%= form.date_field :expiry_on %><BR>
