@@ -32,12 +32,12 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "変更する" %>
   </div>
 <% end %>
 <BR>
 <h3>アプリの使用をやめる</h3>
 
-<p>ユーザーを削除したい方は下のボタンを押してください <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>ユーザーを削除したい方は下のボタンを押してください <%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "戻る", :back %>

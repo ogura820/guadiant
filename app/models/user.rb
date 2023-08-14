@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :families, dependent: :destroy 
   has_many :stockpiles, dependent: :destroy 
 
+  after_create :initialize_stockpiles
+
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
@@ -95,6 +97,12 @@ class User < ApplicationRecord
   end
 
 private
+
+  def initialize_stockpiles
+    calculate_stocks.keys.each do |name|
+      self.stockpiles.create!(name: name.to_s)
+    end
+  end
 
   def basic_required_
     {
