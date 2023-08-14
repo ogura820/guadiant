@@ -33,7 +33,7 @@
           <%= form_with(model: @map, remote: true) do |form| %>
             <div class="field">
               <%= form.label :name %>
-              <%= form.text_field :name %>
+              <%= form.text_field :name, placeholder:'自宅・職場・学校など' %>
             </div>
             <div class="field">
             <label for="address">Address</label>
@@ -41,11 +41,11 @@
             </div>
             <div class="field">
               <%= form.label :latitude %>
-              <%= form.text_field :latitude, id: "map_latitude" %>
+              <%= form.text_field :latitude, id: "map_latitude" , placeholder:'住所を入力してください'%>
             </div>
             <div class="field">
               <%= form.label :longitude %>
-              <%= form.text_field :longitude, id: "map_longitude" %>
+              <%= form.text_field :longitude, id: "map_longitude", placeholder:'住所を入力してください' %>
             </div>      
           </div>
         <div class="modal-footer">

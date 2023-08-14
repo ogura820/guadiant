@@ -14,12 +14,12 @@
         <%= form_with(model: @family, remote: true) do |form| %>
           <div class="field">
             <%= form.label :名前 %>
-              <%= form.text_field :name %>
+              <%= form.text_field :name, placeholder:'自分・夫・妻など' %>
           </div>
           <%= form.label :性別 %>
             <%= form.select :sex, [["男性", "男性"], ["女性", "女性"], ["その他", "その他"], ["回答しない", "回答しない"]], include_blank: "選択して下さい" %><BR>
           <%= form.label :年齢 %>
-            <%= form.number_field :age, min: 0, max: 150 %>(数え年)<BR>
+            <%= form.number_field :age, min: 0, max: 150, placeholder:'数字' %>(数え年)<BR>
             <%= form.label :普段料理をするか %>
             <%= form.select :diet, [["しない", "しない"], ["中食が多い", "中食が多い"], ["する", "する"]] %><BR>
             <%= form.label :登録する家族がペットだったらチェック %>
