@@ -50,14 +50,14 @@
           <h4 class="my-0 fw-normal">防災備蓄管理機能</h4>
         </div>
         <div class="card-body">
-        <small class="text-body-secondary fw-light">登録されている物資</small><h1 class="card-title pricing-card-title"><%= @maps.count %></h1>
+        <small class="text-body-secondary fw-light">登録されている物資</small><h1 class="card-title pricing-card-title"><%= @stockpiles.count %></h1>
           <ul class="list-unstyled mt-3 mb-4">
             <li>物資と消費期限を登録してメールで通知を受け取りましょう！</li>
             <li>この機能を利用するために必要な情報は以下の通りです</li>
             <li>・物資の情報</li>
             <li>・通知を受け取りたい日にち</li>
           </ul>
-          <%= link_to maps_path, class: "w-100 btn btn-lg btn-outline-primary", data: {"turbolinks" => false} do %>
+          <%= link_to stockpiles_path, class: "w-100 btn btn-lg btn-outline-primary", data: {"turbolinks" => false} do %>
             <i class="bi bi-envelope-fill" aria-hidden="true"></i>
             防災備蓄管理機能を利用
           <% end %>   

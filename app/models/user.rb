@@ -99,16 +99,9 @@ class User < ApplicationRecord
 private
 
   def initialize_stockpiles
-    self.stockpiles.create!(name: "生米")
-    self.stockpiles.create!(name: "水")
-    self.stockpiles.create!(name: "カセットボンベ")
-    self.stockpiles.create!(name: "そうめん")
-    self.stockpiles.create!(name: "パスタ")
-    self.stockpiles.create!(name: "パックごはん")
-    self.stockpiles.create!(name: "カップ麺")
-    self.stockpiles.create!(name: "ご飯一緒に食べるレトルト食品")
-    self.stockpiles.create!(name: "パスタと一緒に食べるレトルト食品")
-    self.stockpiles.create!(name: "缶詰")
+    calculate_stocks.keys.each do |name|
+      self.stockpiles.create!(name: name.to_s)
+    end
   end
 
   def basic_required_
