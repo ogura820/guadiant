@@ -29,7 +29,7 @@ Rails.application.configure do
     password: ENV['SENDGRID_PASSWORD'],
     domain: "guardiant.tokyo",
     address: "smtp.sendgrid.net",
-    port: 25,
+    port: 465,
     authentication: :plain,
     enable_starttls_auto: true
   }
