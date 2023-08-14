@@ -15,6 +15,8 @@ https://guardiant.tokyo/
  - GeoJSON API (CSV フォーマットのデータを GitHub Actions で GeoJSON に変換し API として公開するAPI)
  - Community Geocoder(住所から緯度経度を検索)
  - Embed API(Geoloniaの地図を表示するAPI)
+ - ChatGPT API(登録ユーザーに基づき必要な物資を聞く機能に使用)
+
 
  ## アプリケーションの実行手順
   `git clone git@github.com:ogura820/guadiant.git`  
