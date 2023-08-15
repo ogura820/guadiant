@@ -149,4 +149,20 @@
   height: 80px;
 }
 
+li span.circle {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%; 
+  margin-right: 8px;
+}
+
+.red .circle { background-color: red; }
+.green .circle { background-color: rgb(0, 255, 0); }
+.blue .circle { background-color: rgb(0, 0, 255); }
+.yellow .circle { background-color: yellow; }
+.purple .circle { background-color: rgb(255, 0, 255); }
+.light_blue .circle { background-color: rgb(0, 255, 255); }
+.black .circle { background-color: black; }
+
 @import "bootstrap";
