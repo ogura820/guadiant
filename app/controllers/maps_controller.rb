@@ -28,6 +28,7 @@ class MapsController < ApplicationController
   private
     def set_map
       @map = Map.find(params[:id])
+      redirect_to maps_url, notice: "アクセス権限がありません" unless @map.user == current_user
     end
 
     def map_params
