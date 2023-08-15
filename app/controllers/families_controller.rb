@@ -20,9 +20,9 @@ class FamiliesController < ApplicationController
   def update
     @family = Family.find(params[:id])
     if @family.update(family_params)
-      redirect_to families_path, notice: "タスクを編集しました！"
+      redirect_to families_path, notice: "情報を更新しました！"
     else
-      render :edit
+      redirect_to families_path, notice: "更新に失敗しました。空白では更新できません"
     end
   end
 
