@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= f.label :password %> <i>(パスワードを変えない場合は空白のままにしてください)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder:'半角六文字以上' %>
     <% if @minimum_password_length %>
       <br />
       <em>半角6文字以上</em>
@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:'半角六文字以上' %>
   </div>
 
   <div class="field">
     <%= f.label :current_password %> <i>変更をするために現在のパスワードを入力してください</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <%= f.password_field :current_password, autocomplete: "current-password", placeholder:'使用中のパスワード' %>
   </div>
 
   <div class="actions">
