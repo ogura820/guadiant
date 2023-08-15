@@ -9,12 +9,12 @@
     <% if @minimum_password_length %>
       <em>(半角<%= @minimum_password_length %> 以上)</em><br />
     <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder:"6文字以上半角で" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation, "確認のためもう一度パスワードを入力" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:'上と同じ内容を入力してください' %>
   </div>
 
   <div class="actions">
