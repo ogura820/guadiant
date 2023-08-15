@@ -1,14 +1,16 @@
 <div class="listings">
   <div class="listings_channels">
-    <%= image_tag "logo.png", class: 'logo' %>
+    <%= link_to root_path do %>
+      <%= image_tag "logo.png", class: 'logo' %>
+    <% end %>
     <BR><BR><BR><BR><BR><BR>
     <% if user_signed_in? %>
       <h2 class="listings_header">menu</h2><BR><BR>
       <ul class="channel_list">
         <%= sidebar_link_item('アカウント情報編集', edit_user_registration_path) %>
-        <%= sidebar_link_item('避難場所検索', maps_path) %>
-        <%= sidebar_link_item('必要備蓄量算出', families_path) %>
-        <%= sidebar_link_item('防災備蓄管理', stockpiles_path) %>
+        <%= sidebar_link_item('避難場所を検索', maps_path) %>
+        <%= sidebar_link_item('防災備蓄量を計算', families_path) %>
+        <%= sidebar_link_item('防災備蓄品を管理', stockpiles_path) %>
       </ul>
     <% end %>  
   </div>
