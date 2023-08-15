@@ -16,6 +16,7 @@ https://guardiant.tokyo/
  - Community Geocoder(住所から緯度経度を検索)
  - Embed API(Geoloniaの地図を表示するAPI)
  - ChatGPT API(登録ユーザーに基づき必要な物資を聞く機能に使用)
+ - ransack(備蓄管理機能の検索・ソート機能に使用)
 
 
  ## アプリケーションの実行手順

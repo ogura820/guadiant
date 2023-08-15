@@ -7,18 +7,19 @@
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm">
           <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">避難場所検索機能</h4>
+            <h4 class="my-0 fw-normal">災害時、どこへ？<BR>あなたの避難マップ作成</h4>
           </div>
           <div class="card-body">
           <small class="text-body-secondary fw-light">現在登録されている地図</small><h1 class="card-title pricing-card-title"><%= @maps.count %></h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li>住所を入力して避難場所を把握しましょう！</li>
-              <li>この機能を利用するために必要な情報は以下の通りです</li>
-              <li>・住所</li><BR>
+              <li>地震や洪水が発生したとき安全な避難場所を知っていますか？</li>
+              <li>この機能を使って自治体の発表している避難場所を把握しましょう。</li>
+              <li>使い方は簡単です。入力フォームに住所を入力するだけ！</li>
+              <li>入力された住所を中心に洪水・地震・津波・火災発生時に安全な避難場所を地図上に表示することができます。</li>
             </ul>
             <%= link_to maps_path, class: "w-100 btn btn-lg btn-outline-primary", data: {"turbolinks" => false}  do %>
               <i class="bi bi-binoculars-fill" aria-hidden="true"></i>
-              避難場所検索機能を利用
+              さっそく避難場所を検索する！
             <% end %>   
           </div>
         </div>
@@ -26,20 +27,21 @@
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm">
           <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">必要備蓄量算出機能</h4>
+            <h4 class="my-0 fw-normal">災害に負けない！<BR>あなたの備蓄ガイド</h4>
           </div>
           <div class="card-body">
           <small class="text-body-secondary fw-light">現在登録されているメンバー</small>
           <h1 class="card-title pricing-card-title"><%= @families.count %></h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li>メンバーに応じた防災備蓄量を算出しましょう！</li>
-              <li>この機能を利用するために必要な情報は以下の通りです</li>
-              <li>・メンバーの人数</li>
-              <li>・メンバーの情報</li>
+              <li>天災時に水や食料が入手できなくなっても大丈夫な備蓄量はどれくらいでしょうか？</li>
+              <li>この機能を使って必要な備蓄量を把握しましょう。</li>
+              <li>使い方は簡単です。必要な人数とその属性を入力するだけ！</li>
+              <li>情報を入力することで備蓄を必要とする人を登録することができます。</li>
+              <li>登録された人に応じて必要な備蓄量を表示されます。</li>
             </ul>
             <%= link_to families_path, class: "w-100 btn btn-lg btn-outline-primary", data: {"turbolinks" => false} do %>
               <i class="bi bi-calculator-fill" aria-hidden="true"></i>
-              防災備蓄算出機能を利用
+              さっそく必要な備蓄量を計算する！
             <% end %>   
           </div>
         </div>
@@ -47,19 +49,20 @@
       <div class="col">
       <div class="card mb-4 rounded-3 shadow-sm">
         <div class="card-header py-3">
-          <h4 class="my-0 fw-normal">防災備蓄管理機能</h4>
+          <h4 class="my-0 fw-normal">備蓄品消費期限アラート！<BR>通知で期限切れを回避</h4>
         </div>
         <div class="card-body">
         <small class="text-body-secondary fw-light">登録されている物資</small><h1 class="card-title pricing-card-title"><%= @stockpiles.count %></h1>
           <ul class="list-unstyled mt-3 mb-4">
-            <li>物資と消費期限を登録してメールで通知を受け取りましょう！</li>
-            <li>この機能を利用するために必要な情報は以下の通りです</li>
-            <li>・物資の情報</li>
-            <li>・通知を受け取りたい日にち</li>
+            <li>防災備蓄をしても必要なときに消費期限が切れていたら意味がありません。</li>
+            <li>この機能を使って防災備蓄の消費期限を管理しましょう。</li>
+            <li>使い方は簡単です。備蓄品の名前と消費期限・通知して欲しい日を登録するだけ！</li>
+            <li>登録をした通知日に消費期限が迫っていることをメールで通知してくれます！</li>
+            <li>消費期限と通知日を登録せずに防災備蓄品の管理をするために利用することもできます。</li>
           </ul>
           <%= link_to stockpiles_path, class: "w-100 btn btn-lg btn-outline-primary", data: {"turbolinks" => false} do %>
             <i class="bi bi-envelope-fill" aria-hidden="true"></i>
-            防災備蓄管理機能を利用
+            さっそく期限アラートを利用する！
           <% end %>   
         </div>
       </div>
