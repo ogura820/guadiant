@@ -65,4 +65,25 @@ RSpec.describe '必要備蓄量計算機能', type: :system do
       end
     end
   end
+  describe '必要備蓄量のテスト' do
+    let!(:user) { FactoryBot.create(:user) }
+    before do
+      visit new_user_session_path
+      fill_in 'メールアドレス', with: 'test@sample.com'
+      fill_in 'パスワード', with: 'password'
+      click_button 'ログイン'
+      visit families_path
+    end
+    context '一覧画面にアクセスした場合' do
+      it '一覧画面に他のユーザーの作成したメンバーは表示されない' do
+        visit new_user_session_path
+        fill_in 'メールアドレス', with: 'test@sample.com'
+        fill_in 'パスワード', with: 'password'
+        click_button 'ログイン'
+        visit families_path
+        expect(page).to have_content('現在メンバーは0人です')
+        expect(page).not_to have_content('次女')
+      end
+    end
+  end
 end
