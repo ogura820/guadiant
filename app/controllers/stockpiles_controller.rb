@@ -10,7 +10,7 @@ class StockpilesController < ApplicationController
 
   def update
     if @stockpile.update(stockpile_params)
-      redirect_to stockpiles_path, notice: "タスクを編集しました！"
+      redirect_to stockpiles_path, notice: "情報を編集しました！"
     else
       redirect_to stockpiles_path, notice: "更新に失敗しました。空白では更新できません"
     end
