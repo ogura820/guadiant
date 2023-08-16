@@ -46,7 +46,7 @@ RSpec.describe '避難場所検索機能', type: :system do
       end
     end
     context '他のユーザーの地図を見ようとした場合' do
-      let!(:map_user) { FactoryBot.create(:map_user) }
+      let!(:id_user) { FactoryBot.create(:id_user) }
       let!(:map2) { FactoryBot.create(:map2) }
       it '地図が表示されない' do
         click_on "地図表示"

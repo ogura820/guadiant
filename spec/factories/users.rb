@@ -11,7 +11,7 @@ FactoryBot.define do
     password_confirmation {"password"}
     admin                 {true}
   end
-  factory :map_user, class: User do
+  factory :id_user, class: User do
     email                 {"admintest@sample.com"}
     password              {"password"}
     password_confirmation {"password"}

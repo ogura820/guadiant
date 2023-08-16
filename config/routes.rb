@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   end
   
   resources :maps
-  resources :families
+  resources :families do
+    member do
+      post :send_stock_mail
+    end
+  end
   resources :stockpiles
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

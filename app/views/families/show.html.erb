@@ -12,7 +12,7 @@
 <%= chat_gpt_text if params[:generate_chat_gpt] %>
 <BR><BR>
 
-<%= link_to "必要備蓄量をメールで受け取る", family_path(sent_mail: "true")%>
+<%= link_to '必要物資のメールを送る', send_stock_mail_family_path, method: :post %>
 
   <table class="table table-striped" >
   <thead>

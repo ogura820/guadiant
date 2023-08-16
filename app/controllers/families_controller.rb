@@ -11,18 +11,14 @@ class FamiliesController < ApplicationController
     @families = current_user.families.preload(:user)
     @coefficient = @families.sum(&:coefficient)
     @calculate_stocks = current_user.calculate_stocks
-    if params[:sent_mail]
-      StockMailer.stock_mail(current_user.calculate_stocks,@families.sum(&:coefficient),current_user).deliver
-      redirect_to family_path, notice: 'メール送信しました'
-    end
   end
 
   def update
     @family = Family.find(params[:id])
     if @family.update(family_params)
-      redirect_to families_path, notice: "タスクを編集しました！"
+      redirect_to families_path, notice: "情報を更新しました！"
     else
-      render :edit
+      redirect_to families_path, notice: "更新に失敗しました。空白では更新できません"
     end
   end
 
@@ -43,6 +39,15 @@ class FamiliesController < ApplicationController
   def destroy
     @family.destroy!
     redirect_to families_url, notice: "算出用ユーザーの削除に成功しました"
+  end
+
+  def send_stock_mail
+    @families = current_user.families.preload(:user)
+    @coefficient = @families.sum(&:coefficient)
+    @calculate_stocks = current_user.calculate_stocks
+    
+    StockMailer.stock_mail(@calculate_stocks, @coefficient, current_user).deliver
+    redirect_to family_path, notice: 'メール送信しました'
   end
 
   private
