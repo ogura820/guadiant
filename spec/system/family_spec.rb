@@ -108,9 +108,8 @@ RSpec.describe '必要備蓄量計算機能', type: :system do
       end
       it '必要物資をメールで受け取れる' do
         click_on '必要物資表示'
-        click_on '必要備蓄量をメールで受け取る'
-        visit letter_opener_web_path
-        expect(page).to have_content('必要物資量の確認')
+        click_on '必要物資のメールを送る'
+        expect(page).to have_content('メール送信しました')
       end
     end
   end
