@@ -31,7 +31,7 @@
         <tr>
           <td><%= map.name %></td>
           <td> 
-            <%= link_to map , class: "btn btn-secondary" do %>
+            <%= link_to map , class: "btn btn-secondary", data: {"turbolinks" => false} do %>
             <i class="bi bi-map" aria-hidden="true"></i> 地図表示
             <% end %>  
           </td>
@@ -44,4 +44,3 @@
     <% end %>
   </tbody>
 </table>
-
