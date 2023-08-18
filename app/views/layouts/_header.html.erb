@@ -9,23 +9,42 @@
   <% else %>
   <%= link_to users_guest_sign_in_path, method: :post, class: "btn btn-warning" do %>
     <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
-    ゲストログイン（閲覧用
+    ゲストログイン（閲覧用）
   <% end %>  
 
-  <%= link_to  users_admin_sign_in_path, method: :post, class: "btn btn-danger" do %>
+  <%= link_to users_admin_sign_in_path, method: :post, class: "btn btn-danger" do %>
     <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
     管理者ゲストログイン（閲覧用）  
   <% end %>  
 
-    <%= link_to  new_user_registration_path, class: "btn btn-outline-primary" do %>
+    <%= link_to new_user_registration_path, class: "btn btn-outline-primary" do %>
       <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
       新規登録  
     <% end %>   
 
-    <%= link_to  new_user_session_path, class: "btn btn-outline-success" do %>
+    <%= link_to new_user_session_path, class: "btn btn-outline-success" do %>
       <i class="bi bi-box-arrow-in-left" aria-hidden="true"></i>
       ログイン
     <% end %>
   <% end %>
   </div>
+</div>
+
+<div class="d-block d-md-none">
+  <div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    メニュー
+  </a>
+    <ul class="dropdown-menu">
+      <li><%= link_to 'ホーム画面', root_path, data: {"turbolinks" => false} %></li>
+      <li><%= link_to 'アカウント情報編集', edit_user_registration_path, data: {"turbolinks" => false} if user_signed_in? %></li>
+      <li><%= link_to '避難場所を検索', maps_path, data: {"turbolinks" => false} if user_signed_in? %></li>
+      <li><%= link_to '防災備蓄量を計算', families_path, data: {"turbolinks" => false} if user_signed_in? %></li>
+      <li><%= link_to '防災備蓄品を管理', stockpiles_path, data: {"turbolinks" => false} if user_signed_in? %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: {"turbolinks" => false} if user_signed_in? %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, data: {"turbolinks" => false} unless user_signed_in? %></li>
+      <li><%= link_to 'ログイン', new_user_session_path, data: {"turbolinks" => false} unless user_signed_in? %></li>
+      <li><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, data: {"turbolinks" => false} unless user_signed_in? %></li>
+    </ul>
+    </div>
 </div>
