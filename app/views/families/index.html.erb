@@ -21,33 +21,27 @@
 <% if @families.present? %>
   <a href="families/show" class="btn btn-danger" role="button">必要物資表示</a>
 <% end %>
-<%= render 'form' %> 現在メンバーは<%= @families.size %>人です
-<table class="table table-striped" >
-  <thead>
-    <tr>
-      <th>名前</th>
-      <th>年齢</th>
-    </tr>
-  </thead>
-  <tbody>
+<%= render 'form' %><p> 現在メンバーは<%= @families.size %>人です</p>
+
+<div class="container">
+  <div class="row">
     <% @families.each do |family| %>
-      <% if family.name.present? && family.sex.present? && family.age.present? %> 
-      <tr>
-        <td><%= family.name %></td>
-        <td><%= image_tag family.icon_image, class: 'icon' %><%= family.age %>歳</td>
-        <td>
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal<%= family.id %>">
-          <i class="bi bi-pencil-fill" aria-hidden="true"></i> 編集
-          </button>
-          <%= render 'edit', family: family %>  
-        </td>
-        <td>
+      <div class="col-md-3 col-sm-5 mb-4"> <!-- mdデバイスで3つ, smで2つ, それ以下のサイズで1つのカードを表示 -->
+        <div class="card" style="width: 18rem;">
+        <%= image_tag family.icon_image, class: 'icon',class:"card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title">名前：<%= family.name %></h5>
+            <p class="card-text">年齢：<%= family.age %>歳</p>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal<%= family.id %>">
+              <i class="bi bi-pencil-fill" aria-hidden="true"></i> 編集
+            </button>
+            <%= render 'edit', family: family %>  
             <%= link_to  family, method: :delete, data: { confirm: '本当に削除しますか?' }, class: "btn btn-danger" do %>
               <i class="bi bi-x-lg" aria-hidden="true"></i>削除
             <% end %>  
-        </td>
-      </tr>
-      <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>

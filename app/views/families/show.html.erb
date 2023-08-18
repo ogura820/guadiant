@@ -27,7 +27,7 @@
   <tr>
   <% @calculate_stocks.each do |key, value| %>
     <tr>
-    <td><h3><%= image_tag  value[:画像] , class: 'icon' %><%= key %></h3></td>
+    <td><h3><%= image_tag  value[:画像] , class: 'icon' %><BR><%= key %></h3></td>
       <td><h2><%= value[:計算量] %><small class="text-body-secondary"><%= value[:単位] %></small></h2></td>
       <td><h2><%= value[:一人分] %><small class="text-body-secondary"><%= value[:単位] %></small></h2></td>
       <% total_calculation = value[:一人分] * @coefficient %>
@@ -36,6 +36,6 @@
   <% end %>
   </tbody>
 </table>
-その他、調味料インスタント味噌汁や即席スープ、野菜ジュースがあるとよい
-https://www.maff.go.jp/j/zyukyu/foodstock/attach/pdf/guidebook-3.pdf<BR>
+<p>他にも味噌汁や即席スープ、野菜ジュースもオススメです</p>
+
 <a href="families" class="btn btn-primary"  role="button" >戻る</a>
