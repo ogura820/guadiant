@@ -14,9 +14,9 @@ class Family < ApplicationRecord
     if pet
       'age/animal.png'
     elsif sex == "その他"
-      'lgbt.png'
+      'age/lgbt.png'
     elsif sex == "回答しない"
-      'maruhi.png'
+      'age/maruhi.png'
     elsif (0..6).include?(age)
       sex == "男性" ? 'age/baby_boy.png' : 'age/baby_girl.png'
     elsif (7..13).include?(age)
