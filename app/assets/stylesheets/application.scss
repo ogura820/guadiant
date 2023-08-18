@@ -14,6 +14,18 @@
  *= require_self
  */
 
+ img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .yield {
+      padding-left: 30px; 
+      padding-right: 30px; 
+  }
+}
+
 .header {
   background-color: #ffffff;
   height: 80px;
