@@ -30,6 +30,7 @@
 <% end %>
 <BR>
 
+
 <h3>消費期限切れ物資一覧</h3>
 
 <table class="table table-striped">
@@ -51,13 +52,15 @@
           <td><%= stockpile_strftime_text(stockpile.notice_on) %></td>
           <td> 
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal<%= stockpile.id %>">
-            <i class="bi bi-pencil-fill" aria-hidden="true"></i> 編集
+            <i class="bi bi-pencil-fill" aria-hidden="true"></i>
+            <div class="d-none d-md-block"> 編集</dv>
             </button>
             <%= render 'edit', stockpile: stockpile %>  
           </td>
           <td>
             <%= link_to  stockpile, method: :delete, data: { confirm: '本当に削除しますか?' }, class: "btn btn-danger" do %>
-              <i class="bi bi-x-lg" aria-hidden="true"></i> 削除
+              <i class="bi bi-x-lg" aria-hidden="true"></i>
+              <div class="d-none d-md-block"> 削除</dv>
             <% end %>  
           </td>
         </tr>
@@ -89,13 +92,15 @@
           <td><%= stockpile_strftime_text(stockpile.notice_on) %></td>
           <td> 
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal<%= stockpile.id %>">
-            <i class="bi bi-pencil-fill" aria-hidden="true"></i> 編集
+              <i class="bi bi-pencil-fill" aria-hidden="true"></i>
+              <div class="d-none d-md-block"> 編集</div>
             </button>
             <%= render 'edit', stockpile: stockpile %>  
           </td>
           <td>
             <%= link_to  stockpile, method: :delete, data: { confirm: '本当に削除しますか?' }, class: "btn btn-danger" do %>
-              <i class="bi bi-x-lg" aria-hidden="true"></i> 削除
+              <i class="bi bi-x-lg" aria-hidden="true"></i>
+              <div class="d-none d-md-block"> 削除</div>
             <% end %>  
           </td>
         </tr>
