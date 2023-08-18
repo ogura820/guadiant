@@ -1,7 +1,14 @@
 <figure class="text-center">
+  <div class="d-none d-md-block">
+    <blockquote class="blockquote"> 
+      <%= image_tag "title/require_stocks.svg", class: 'display-1' %>
+    </blockquote>
+  </div>
+  <div class="d-block d-md-none">
   <blockquote class="blockquote"> 
-    <%= image_tag "title/require_stocks.svg", class: 'display-1' %>
+    <%= image_tag "title/require_stocks_mobile.svg", class: 'display-1' %>
   </blockquote>
+</div>
   <figcaption class="blockquote-footer">
     <p>二週間分の必要備蓄量です</p>
   </figcaption>
@@ -36,6 +43,6 @@
   <% end %>
   </tbody>
 </table>
-<p>他にも味噌汁や即席スープ、野菜ジュースもオススメです</p>
+<p>他に味噌汁や即席スープ、野菜ジュースもオススメです</p>
 
 <%= link_to 'Back', families_path, data: {"turbolinks" => false} %>

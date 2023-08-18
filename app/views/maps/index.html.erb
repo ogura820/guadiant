@@ -10,9 +10,16 @@
 <% end %>
 
 <figure class="text-center">
+  <div class="d-none d-md-block">
+    <blockquote class="blockquote"> 
+      <%= image_tag "title/maps.svg", class: 'display-1' %>
+    </blockquote>
+  </div>
+  <div class="d-block d-md-none">
   <blockquote class="blockquote"> 
-    <%= image_tag "title/maps.svg", class: 'display-1' %>
+    <%= image_tag "title/maps_mobile.svg", class: 'display-1' %>
   </blockquote>
+</div>
   <figcaption class="blockquote-footer">
     <p>住所を入力すると周辺の避難場所が表示されます</p>
   </figcaption>
