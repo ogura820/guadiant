@@ -5,7 +5,7 @@ rails_env = ENV['RAILS_ENV'] || :development
 set :output, "#{Rails.root}/log/cron.log"
 set :environment, rails_env
 
-every 1.day, at: '6:10 am' do
+every 1.day, at: '6:20 am' do
   runner "Stockpile.notice_on_check"
 end
 
