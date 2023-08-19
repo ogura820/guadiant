@@ -11,8 +11,11 @@ class Stockpile < ApplicationRecord
     Stockpile.all.each do |stockpile|
       if stockpile.notice_on && stockpile.notice_on.to_date < Time.now.to_date && stockpile.status = false
         stockpile.status = true
+        begin
         StockpileMailer.notice_mail(stockpile).deliver
         stockpile.save
+        rescue=>
+          put e.full_message
       end
     end
   end
