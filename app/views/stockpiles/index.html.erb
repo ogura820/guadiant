@@ -39,7 +39,7 @@
 
 
 <h3>通知済み物資一覧</h3>
-<p>※午前6:30更新</p>
+<p>※午前更新</p>
 
 <table class="table table-striped">
   <thead>
@@ -53,7 +53,7 @@
 
   <tbody>
     <% @stockpiles.each do |stockpile| %>
-      <% if stockpile.name.present? && stockpile.notice_on && stockpile.nitice_on.to_date < Time.now.to_date %> 
+      <% if stockpile.name.present? && stockpile.notice_on && stockpile.notice_on.to_date < Time.now.to_date %> 
         <tr>
           <td><%= stockpile.name %></td>
           <td><%= stockpile_strftime_text(stockpile.expiry_on) %></td>
@@ -61,7 +61,7 @@
           <td> 
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal<%= stockpile.id %>">
             <i class="bi bi-pencil-fill" aria-hidden="true"></i>
-            <div class="d-none d-md-block"> 編集</dv>
+            <div class="d-none d-md-block"> 編集</div>
             </button>
             <%= render 'edit', stockpile: stockpile %>  
           </td>
@@ -92,7 +92,7 @@
 
   <tbody>
     <% @stockpiles.each do |stockpile| %>
-      <% if stockpile.name.present? && (stockpile.nitice_on.nil? || stockpile.noitice_on.to_date >= Time.now.to_date) %>
+      <% if stockpile.name.present? && (stockpile.notice_on.nil? || stockpile.notice_on.to_date >= Time.now.to_date) %>
 
         <tr>
           <td><%= stockpile.name %></td>
