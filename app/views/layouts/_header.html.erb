@@ -1,28 +1,23 @@
 <div class="d-none d-md-block">
   <div class="d-flex flex-row-reverse bd-highlight">
   <% if user_signed_in? %>
-    <%= link_to  destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" do %>
+    <%= link_to  destroy_user_session_path, method: :delete, class: "btn btn-outline-danger btn-margin-right" do %>
       <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
       ログアウト
     <% end %>
     <%= link_to '管理者専用ページへ', rails_admin_path if current_user.admin?%>
   <% else %>
-  <%= link_to users_guest_sign_in_path, method: :post, class: "btn btn-warning" do %>
+  <%= link_to users_guest_sign_in_path, method: :post, class: "btn btn-warning btn-margin-right" do %>
     <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
     ゲストログイン（閲覧用）
   <% end %>  
 
-  <%= link_to users_admin_sign_in_path, method: :post, class: "btn btn-danger" do %>
-    <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
-    管理者ゲストログイン（閲覧用）  
-  <% end %>  
-
-    <%= link_to new_user_registration_path, class: "btn btn-outline-primary" do %>
+    <%= link_to new_user_registration_path, class: "btn btn-outline-primary btn-margin-right" do %>
       <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
       新規登録  
     <% end %>   
 
-    <%= link_to new_user_session_path, class: "btn btn-outline-success" do %>
+    <%= link_to new_user_session_path, class: "btn btn-outline-success btn-margin-right" do %>
       <i class="bi bi-box-arrow-in-left" aria-hidden="true"></i>
       ログイン
     <% end %>
